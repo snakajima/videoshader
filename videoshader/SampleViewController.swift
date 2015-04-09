@@ -15,7 +15,7 @@ class SampleViewController: UIViewController {
     @IBOutlet var btnFlip : UIButton!
     
     let notifications = NotificationManager()
-    let shaderManager = OVLShaderManager.sharedInstance() as OVLShaderManager
+    let shaderManager = OVLShaderManager.sharedInstance() as! OVLShaderManager
     let scriptNames = ["cartoon", "hawaii", "freeza", "matrix1",
                        "pixelize", "motionblur", "red", "gradientmap",
                        "colorsketch", "delicious", "emboss"]
@@ -26,7 +26,7 @@ class SampleViewController: UIViewController {
             if let path = NSBundle.mainBundle().pathForResource(name, ofType: "vsscript") {
                 if let data = NSData(contentsOfFile:path) {
                     if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary {
-                        scripts.append(OVLScript(dictionary: json))
+                        scripts.append(OVLScript(dictionary: json as [NSObject : AnyObject]))
                     }
                 }
             }
@@ -58,7 +58,7 @@ class SampleViewController: UIViewController {
             let sec = self.ovc.duration % 60;
             let min = (self.ovc.duration / 60) % 60;
             let hour = self.ovc.duration / 3600;
-            self.labelTime.text = NSString(format:"%02d:%02d:%02d", hour, min, sec)
+            self.labelTime.text = NSString(format:"%02d:%02d:%02d", hour, min, sec) as String
         }
         
         notifications.addObserverForName(OVLViewController.didFinishWritingVideo(), object: ovc, queue: nil) { [unowned self] (_ : NSNotification!) -> Void in
