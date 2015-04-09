@@ -31,4 +31,6 @@ Here is the famous "cartoon filter" described in VSScript.
 ```
 ## License
 
-All code is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php) for free. I, however, would really appreciate if you could purchase [VideoShader Composer](https://itunes.apple.com/us/app/videoshader-composer/id764918337?mt=8), which allows you to interactively create and edit video pipelines (in VSScript). 
+All code is licensed under the [GPL2](http://www.gnu.org/licenses/gpl-2.0.txt) for free. I, however, would really appreciate if you could purchase [VideoShader Composer](https://itunes.apple.com/us/app/videoshader-composer/id764918337?mt=8), which allows you to interactively create and edit video pipelines (in VSScript). 
+
+If anybody want to use this software without GPL2 restriction for commercial purpose, please contact me. 
