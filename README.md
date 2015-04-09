@@ -9,7 +9,7 @@ Because each video filter is built on top of OpenGL, all video processing will b
 This pure GPU-based architecture allows it to process SD-video on iPhone4s, and HD-video on iPhone5 in real-time (30fps)! 
 
 ## VideoShader Script
-VideoShader Script (VSScript) is the JSON-based language, which makes it very easy for developoers to describe video pipelined. At runtime, the VideoShader compiles the script into OpenGL shading language (GLSL), and executes it very efficiently. 
+VideoShader Script (VSScript) is the JSON-based language, which makes it very easy for developoers to describe video pipelines. At runtime, the VideoShader compiles the script into OpenGL shading language (GLSL), and executes it very efficiently. 
 
 Here is the famous "cartoon filter" described in VSScript. 
 
