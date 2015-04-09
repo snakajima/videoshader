@@ -1,0 +1,12 @@
+{
+    "title":"Canny Edge",
+    "pipeline":[
+        { "filter":"boxblur", "attr":{"radius":2.0} },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{ "threshold":0.19, "thin":0.50 } },
+        { "filter":"anti_alias" },
+        { "source":"color" },
+        { "control":"swap" },
+        { "blender":"alpha" }
+    ]
+}

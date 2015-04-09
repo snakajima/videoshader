@@ -1,0 +1,41 @@
+{
+  "title" : "Tilt Shift",
+  "pipeline" : [
+    {
+      "filter" : "tilt_shift",
+      "attr" : {
+        "factor" : 1.8,
+        "position" : 0.75,
+        "radius" : 8
+      },
+      "ui" : {
+        "primary" : [
+          "position", "factor", "radius"
+        ]
+      }
+    },
+    {
+      "filter" : "saturate",
+      "attr" : {
+        "ratio" : 0.56,
+      },
+    },
+    {
+      "filter" : "enhancer",
+      "attr" : {
+        "red" : [
+          0.10,
+          1
+        ],
+        "green" : [
+          0.10,
+          1
+        ],
+        "blue" : [
+          0.10,
+          1
+        ]
+      },
+    }
+  ]
+}

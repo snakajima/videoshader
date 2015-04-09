@@ -1,0 +1,8 @@
+{
+    "title":"Sharpen",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"gaussianblur", "attr":{ "radius":4.0 } },
+        { "blender":"differentiate", "attr":{ "ratio":4.0 } },
+    ]
+}

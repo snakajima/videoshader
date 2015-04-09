@@ -1,0 +1,7 @@
+{
+    "title":"Color Enhancer",
+    "pipeline":[
+        { "filter":"enhancer", "attr":{ "green":[0.4, 0.6] } },
+    ]
+}
+

@@ -1,0 +1,131 @@
+{
+  "title" : "Color Dots 2",
+  "pipeline" : [
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "max_blur_cross",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

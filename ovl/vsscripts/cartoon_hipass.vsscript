@@ -1,0 +1,16 @@
+{
+    "title":"Cartoon II",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"boxblur", "ui":{ "primary":["radius"] }, "attr":{"radius":4.0} },
+        { "control":"fork" },
+        { "filter":"toone", "ui":{ "hidden":["weight"] } },
+        { "control":"shift" },
+        { "filter":"invert" },
+        { "blender":"alpha", "attr":{"ratio":0.5} },
+        { "filter":"boolean",
+          "ui":{ "hidden":["weight"] },
+          "attr":{ "range":[0.0, 0.49] } },
+        { "blender":"alpha" },
+    ]
+}

@@ -1,0 +1,43 @@
+uniform sampler2D uTexture;
+uniform mediump float shift;
+varying mediump vec2 vTextCoord;
+
+void main(void) {
+    lowp vec4 RGBA0 = texture2D(uTexture, vTextCoord);
+    mediump float R0 = RGBA0.r;
+    mediump float G0 = RGBA0.g;
+    mediump float B0 = RGBA0.b;
+    mediump float M0 = max(R0, max(G0, B0));
+    mediump float m0 = min(R0, min(G0, B0));
+    mediump float C0 = M0 - m0;
+    mediump float H0 = (M0 == m0) ? 0.0 :
+                        (M0 == R0) ? (G0 - B0) / C0 :
+                        (M0 == G0) ? (B0 - R0) / C0 + 2.0 : (R0 - G0) / C0 + 4.0;
+    H0 = (H0 < 0.0) ? H0 + 6.0 : H0;
+    mediump float L0 = (M0 + m0) / 2.0;
+    mediump float S0 = M0 - m0;
+    S0 = (L0 == 0.0 || S0 == 0.0) ? 0.0 :
+         S0 / ((L0 < 0.5) ? (M0 + m0) : (2.0 - M0 - m0));
+
+    mediump float L = L0;
+    mediump float H = H0 + shift / 60.0;
+    mediump float S = S0;
+    H = (H < 6.0) ? H : H - 6.0;
+
+    mediump float R = L;
+    mediump float G = L;
+    mediump float B = L;
+    mediump float v = (L < 0.5) ? L * (1.0 + S) : (L + S - L * S);
+    mediump float m = L + L - v;
+    mediump float sv = (v - m) / v;
+    mediump float sex = floor(H);
+    mediump float fract = H - sex;
+    mediump float vsf = v * sv * fract;
+    mediump float mid1 = m + vsf;
+    mediump float mid2 = v - vsf;
+    
+    R = (sex == 4.0) ? mid1 : (sex == 0.0 || sex == 5.0) ? v : (sex == 1.0) ? mid2 : m;
+    G = (sex == 0.0) ? mid1 : (sex == 1.0 || sex == 2.0) ? v : (sex == 3.0) ? mid2 : m;
+    B = (sex == 2.0) ? mid1 : (sex == 3.0 || sex == 4.0) ? v : (sex == 5.0) ? mid2 : m;
+    gl_FragColor = vec4(R, G, B, RGBA0.a);
+}

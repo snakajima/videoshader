@@ -1,0 +1,11 @@
+{
+    "title":"Red Detector",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"mono", "ui":{ "hidden":["weight"] }},
+        { "control":"swap" },
+        { "filter":"boxblur", "attr":{ "radius":1.0 } },
+        { "filter":"hue_filter", "ui":{ "primary":["hue", "chroma"] }, "attr":{ "hue":[345.0, 7.5], "chroma":[0.15, 1.0] } },
+        { "blender":"alpha" }
+    ]
+}

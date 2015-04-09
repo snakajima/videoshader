@@ -1,0 +1,21 @@
+{
+    "title":"Gradient",
+    "pipeline":[
+        { "source":"gradient", 
+            "attr":{"color1":[0.0, 0.0, 1.0, 1.0], "color2":[1.0, 0.0, 0.0, 1.0]} },
+        { "control":"swap" },
+        { "filter":"boxblur", "attr":{"radius":2.0} },
+        { "control":"fork" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{ "threshold":0.39, "thin":0.50 } },
+        { "filter":"anti_alias" },
+        { "control":"swap" },
+        { "filter":"toone", "ui":{ "hidden":["weight"] } },
+        { "source":"color" },
+        { "blender":"alpha", "attr":{"ratio":0.5} },
+        { "filter":"mono", "ui":{ "hidden":["weight"] } },
+        { "control":"swap" },
+        { "blender":"alpha", "attr":{"ratio":0.10} },
+        { "blender":"luminosity" }
+    ]
+}

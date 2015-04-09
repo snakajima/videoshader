@@ -1,0 +1,17 @@
+{
+    "title":"Sound Picker",
+    "pipeline":[
+        { "control":"fork" },
+        { "control":"fork" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge",
+          "attr":{ "threshold":0.19, "thin":0.50, "color":[1.0, 1.0, 0.0, 1.0] }
+        },
+        { "filter":"embold", "attr":{ "radius":1.0 } },
+        { "blender":"alpha" },
+        { "blender":"loudness",
+          "attr":{ "range":[0.0, 0.10]},
+          "ui":{ "primary":["range"] }
+        }
+    ]
+}

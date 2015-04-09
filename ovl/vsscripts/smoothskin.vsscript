@@ -1,0 +1,16 @@
+{
+    "title":"Smooth Skin",
+    "pipeline":[
+        { "filter":"stretch", "attr": { "ratio":[1.0, 1.02] } },
+        { "filter":"lighter", "attr":{ "ratio":1.025 } },
+        { "filter":"enhancer", "attr":{ "red":[0.0, 0.95], "blue":[0.05, 1.0] } },
+        { "control":"fork" },
+        { "filter":"boxblur", "attr":{ "radius":2.0 } },
+        { "control":"fork" },
+        { "control":"shift" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{ "threshold":0.21, "thin":0.0 } },
+        { "filter":"anti_alias", "repeat":2 },
+        { "mixer":"mixer" }
+    ]
+}

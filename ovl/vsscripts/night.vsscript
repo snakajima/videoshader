@@ -1,0 +1,12 @@
+{
+    "title":"Night Vision",
+    "pipeline":[
+        { "filter":"lighter",
+          "attr":{ "ratio":16.0 },
+          "ui": { "primary":["ratio"] } },
+        { "filter":"mono", "ui":{ "hidden":["weight"] },
+          "attr":{ "color":[0.0, 1.0, 0.0, 1.0] } },
+        { "source":"circle", "attr": { "radius":1.5, "power":4.0, "color1":[0.0, 0.0, 0.0, 0.0], "color2":[0.0, 0.0, 0.0, 1.0] }},
+        { "blender":"alpha" },
+    ]
+}

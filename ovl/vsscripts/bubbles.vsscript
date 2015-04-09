@@ -1,0 +1,186 @@
+{
+  "title" : "Bubbles",
+  "pipeline" : [
+    {
+      "filter" : "enhancer",
+      "attr" : {
+        "red" : [
+          0.23,
+          1
+        ],
+        "green" : [
+          0.23,
+          1
+        ],
+        "blue" : [
+          0.23,
+          1
+        ]
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 5.0
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "halftone",
+      "attr" : {
+        "radius" : 12.34444,
+        "color1" : [
+          1,
+          0,
+          0,
+          0.5638889
+        ],
+        "weight" : [
+          0,
+          1,
+          1
+        ],
+        "scale" : 0.86
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "anti_alias",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "shift"
+    },
+    {
+      "filter" : "halftone",
+      "attr" : {
+        "radius" : 9.35,
+        "color1" : [
+          0,
+          1,
+          0,
+          0.3666667
+        ],
+        "weight" : [
+          1,
+          0,
+          1
+        ],
+        "scale" : 1.044722
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "anti_alias",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "shift"
+    },
+    {
+      "filter" : "halftone",
+      "attr" : {
+        "radius" : 18.87778,
+        "color1" : [
+          0,
+          0,
+          1,
+          0.5138889
+        ],
+        "weight" : [
+          1,
+          1,
+          0
+        ],
+        "scale" : 0.9180555
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "anti_alias",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "ui" : {
+
+      },
+      "attr" : {
+        "color" : [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "source" : "color"
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

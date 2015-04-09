@@ -1,0 +1,6 @@
+{
+    "title":"Color Shift",
+    "pipeline":[
+        { "filter":"hueshift", "attr":{ "shift":120.0 } },
+    ]
+}

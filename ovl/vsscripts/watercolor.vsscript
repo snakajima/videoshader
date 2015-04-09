@@ -1,0 +1,20 @@
+{
+    "title":"Water Color",
+    "pipeline":[
+        { "filter":"boxblur", "attr":{"radius":2.0} },
+        { "control":"fork" },
+        { "filter":"toone", "ui":{ "hidden":["weight"] } },
+        { "filter":"lighter", "attr":{"ratio":1.20} },
+        { "source":"color" },
+        { "blender":"alpha", "attr":{"ratio":0.15} },
+        { "filter":"mono", "ui":{ "hidden":["weight"] } },
+        { "control":"fork" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{ "threshold":0.19, "thin":0.50 } },
+        { "filter":"anti_alias" },
+        { "blender":"alpha",
+            "attr":{ "ratio":0.10},
+            "ui":{ "primary":["ratio"] } },
+        { "blender":"luminosity" }
+    ]
+}

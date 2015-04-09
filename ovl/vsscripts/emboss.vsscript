@@ -1,0 +1,11 @@
+{
+    "title":"Emboss",
+    "pipeline":[
+        { "filter":"gaussianblur", "attr":{"radius":3.0} },
+        { "filter":"sobel" },
+        { "filter":"emboss", "attr":{"rotation":2.25}, "ui":{ "primary":["rotation"] } },
+        { "source":"color", "attr":{"color":[0.55, 0.55, 0.55, 1.0]} },
+        { "control":"swap" },
+        { "blender":"alpha" },
+    ]
+}

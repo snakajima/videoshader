@@ -1,0 +1,92 @@
+{
+  "title" : "Monochrome",
+  "pipeline" : [
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 4
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 8
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "boolean",
+      "attr" : {
+        "range" : [
+          0,
+          0.1194444
+        ],
+        "color1" : [
+          1,
+          1,
+          1,
+          1
+        ],
+        "weight" : [
+          0.299,
+          0.587,
+          0.114
+        ],
+        "color2" : [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "ui" : {
+        "hidden" : [
+          "weight"
+        ]
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "filter" : "sobel",
+      "attr" : {
+        "weight" : 2
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "canny_edge",
+      "attr" : {
+        "color" : [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thin" : 0,
+        "threshold" : 0.21
+      },
+    },
+    {
+      "filter" : "anti_alias",
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui":{ "primary":["ratio"] },
+    }
+  ]
+}

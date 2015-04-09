@@ -1,0 +1,7 @@
+{
+    "title":"Half Grayscale",
+    "pipeline":[
+        { "filter":"invert" },
+        { "filter":"mono" },
+    ]
+}

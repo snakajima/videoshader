@@ -1,0 +1,16 @@
+{
+    "title":"Hipass",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"boxblur", "attr":{"radius":4.0} },
+        { "control":"swap" },
+        { "filter":"invert" },
+        { "blender":"alpha", "attr":{"ratio":0.5} },
+        { "filter":"boolean",
+          "ui":{ "hidden":["weight"] },
+          "attr":{ "range":[0.0, 0.49] } },
+        { "source":"color" },
+        { "control":"swap" },
+        { "blender":"alpha" },
+    ]
+}

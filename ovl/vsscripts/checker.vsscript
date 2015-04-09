@@ -1,0 +1,11 @@
+{
+    "title":"Checker",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"mono", "attr":{ "color":[1,1,0,1.0] } },
+        { "control":"swap" },
+        { "filter":"mono", "attr":{ "color":[0,1,1,1.0] } },
+        { "source":"checker", "attr":{ "count":8.0 } },
+        { "mixer":"mixer" },
+    ]
+}

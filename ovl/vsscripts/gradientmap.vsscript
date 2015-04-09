@@ -1,0 +1,9 @@
+{
+    "title":"Gradient Map",
+    "pipeline":[ {
+          "filter":"gradientmap",
+          "attr":{ "color1":[0.0, 0.25, 0.25, 1.0], "color2":[1.0, 1.0, 0.7, 1.0] },
+          "ui":{ "hidden":["weight"], "primary":["color1"] },
+        }
+    ]
+}

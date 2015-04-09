@@ -1,0 +1,12 @@
+{
+    "title":"Tail Lights",
+    "pipeline":[
+        { "control":"previous" },
+        { "source":"color", "attr":{ "color":[0.0, 0.0, 0.0, 0.1] } },
+        { "blender":"alpha",
+          "ui":{ "primary":["ratio"] },
+          "attr": { "ratio":0.2 } },
+        { "blender":"lighten" },
+        { "control":"fork" }
+    ]
+}

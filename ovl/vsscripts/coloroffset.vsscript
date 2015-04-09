@@ -1,0 +1,17 @@
+{
+    "title":"Color Offset",
+    "pipeline":[
+        { "control":"fork" },
+        { "control":"fork" },
+        { "filter":"mono", "attr":{ "color":[1.0, 0.0, 0.0, 1.0], "weight":[1.0, 0.0, 0.0] } },
+        { "control":"swap" },
+        { "filter":"mono", "attr":{ "color":[0.0, 1.0, 0.0, 1.0], "weight":[0.0, 1.0, 0.0] } },
+        { "filter":"offset", "attr":{"offset":[0.0, -0.04]} },
+        { "blender":"lighten" },
+        { "control":"swap" },
+        { "filter":"mono", "attr":{ "color":[0.0, 0.0, 1.0, 1.0], "weight":[0.0, 0.0, 1.0] } },
+        { "filter":"offset", "attr":{"offset":[-0.028, -0.02]} },
+        { "blender":"lighten" },
+        { "filter":"stretch", "attr":{ "ratio":[1.05, 1.05]} },
+    ]
+}

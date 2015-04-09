@@ -1,0 +1,10 @@
+{
+    "title":"Sketch",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"invert" },
+        { "filter":"gaussianblur", "attr":{"radius":11.0} },
+        { "blender":"colordodge" },
+        { "filter":"saturate", "attr":{"ratio":-1.0} },
+    ]
+}

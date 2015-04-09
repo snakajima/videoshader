@@ -1,0 +1,7 @@
+{
+    "title":"X-ray",
+    "pipeline":[
+        { "filter":"invert" },
+        { "filter":"mono", "ui":{ "hidden":["weight"] } },
+    ]
+}

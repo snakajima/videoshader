@@ -1,0 +1,16 @@
+{
+    "title":"Motion Detector",
+    "pipeline":[
+        { "control":"previous" },
+        { "control":"swap" },
+        { "filter":"copy" },
+        { "control":"fork" },
+        { "control":"fork" },
+        { "control":"shift" },
+        { "control":"shift" },
+        { "blender":"delta",
+          "ui":{ "primary":["delta", "color2"] },
+          "attr": { "delta":0.333, "color1":[0.0, 0.0, 0.0, 0.0], "color2":[1.0, 1.0, 0.0, 1.0] } },
+        { "blender":"alpha" }
+    ]
+}

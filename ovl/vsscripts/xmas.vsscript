@@ -1,0 +1,131 @@
+{
+  "title" : "Xmas",
+  "pipeline" : [
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 2
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 6.6
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "toone",
+      "attr" : {
+        "levels" : 4,
+        "weight" : [
+          0.299,
+          0.587,
+          0.114
+        ]
+      },
+      "ui" : {
+        "hidden" : [
+          "weight"
+        ]
+      }
+    },
+    {
+      "filter" : "saturate",
+      "attr" : {
+        "ratio" : -1,
+        "weight" : [
+          0.6305556,
+          0.4694445,
+          0.2611111
+        ]
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "filter" : "sobel",
+      "attr" : {
+        "weight" : 3.188889
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "canny_edge",
+      "attr" : {
+        "color" : [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thin" : 0.5,
+        "threshold" : 0.19
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "anti_alias",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "ui" : {
+        "primary":["tempo"]
+      },
+      "attr" : {
+        "tempo" : 114,
+        "color2" : [
+          0.6694444000000001,
+          0,
+          0,
+          1
+        ],
+        "color1" : [
+          0,
+          0.6111111,
+          0,
+          1
+        ]
+      },
+      "source" : "altcolor"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+      }
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

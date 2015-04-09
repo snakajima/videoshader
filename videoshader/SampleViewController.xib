@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SampleViewController" customModule="videoshader" customModuleProvider="target">
+            <connections>
+                <outlet property="btnRecord" destination="oIf-c0-BxG" id="pUn-uz-P3a"/>
+                <outlet property="labelTime" destination="Db9-Il-ata" id="bRs-Qv-ThG"/>
+                <outlet property="ovc" destination="zQw-Pl-tkZ" id="1Ga-ul-nPv"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" userLabel="rootView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yIx-cy-Rz8" userLabel="glkView" customClass="GLKView">
+                    <rect key="frame" x="0.0" y="119" width="320" height="241"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outlet property="delegate" destination="zQw-Pl-tkZ" id="zdo-KY-e1R"/>
+                        <outletCollection property="gestureRecognizers" destination="PhC-mq-LrZ" appends="YES" id="f61-Jc-C8g"/>
+                        <outletCollection property="gestureRecognizers" destination="Yw9-tl-dgx" appends="YES" id="YvJ-KF-vPT"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIf-c0-BxG">
+                    <rect key="frame" x="123" y="405" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="Rbp-DN-BXD"/>
+                        <constraint firstAttribute="height" constant="75" id="emh-5m-7SO"/>
+                    </constraints>
+                    <state key="normal" image="button_video_normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="record:" destination="-1" eventType="touchUpInside" id="ShT-aQ-EFf"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db9-Il-ata">
+                    <rect key="frame" x="115" y="384" width="91" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="91" id="7LX-Rh-InC"/>
+                        <constraint firstAttribute="height" constant="21" id="HcQ-3o-4Od"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br3-xr-Uxj">
+                    <rect key="frame" x="268" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="FV5-71-hhB"/>
+                        <constraint firstAttribute="width" constant="44" id="rTM-dI-SeB"/>
+                    </constraints>
+                    <state key="normal" image="icon_flip_normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="Db9-Il-ata" secondAttribute="centerX" id="3uD-fW-eDi"/>
+                <constraint firstItem="oIf-c0-BxG" firstAttribute="top" secondItem="Db9-Il-ata" secondAttribute="bottom" id="5Pe-VF-qUh"/>
+                <constraint firstAttribute="trailing" secondItem="yIx-cy-Rz8" secondAttribute="trailing" id="LtV-ge-ZMu"/>
+                <constraint firstItem="br3-xr-Uxj" firstAttribute="top" secondItem="1" secondAttribute="top" constant="8" id="M4b-c6-rGO"/>
+                <constraint firstItem="yIx-cy-Rz8" firstAttribute="top" secondItem="1" secondAttribute="top" id="O3l-8f-fHq"/>
+                <constraint firstItem="yIx-cy-Rz8" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="YGz-Qu-90r"/>
+                <constraint firstAttribute="bottom" secondItem="oIf-c0-BxG" secondAttribute="bottom" id="Yy7-c1-xMt"/>
+                <constraint firstAttribute="centerX" secondItem="oIf-c0-BxG" secondAttribute="centerX" id="koj-vf-H7d"/>
+                <constraint firstAttribute="trailing" secondItem="br3-xr-Uxj" secondAttribute="trailing" constant="8" id="lOV-qJ-KcL"/>
+                <constraint firstAttribute="bottom" secondItem="yIx-cy-Rz8" secondAttribute="bottom" id="xYS-ik-mYE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="174" y="16"/>
+        </view>
+        <viewController id="zQw-Pl-tkZ" customClass="OVLViewController">
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_glkView" destination="yIx-cy-Rz8" id="EPq-ad-46E"/>
+                <outlet property="view" destination="yIx-cy-Rz8" id="uyS-Bq-32Y"/>
+            </connections>
+            <point key="canvasLocation" x="636" y="-23"/>
+        </viewController>
+        <swipeGestureRecognizer direction="right" id="PhC-mq-LrZ">
+            <connections>
+                <action selector="swiped:" destination="-1" id="JY5-OT-med"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="Yw9-tl-dgx">
+            <connections>
+                <action selector="swiped:" destination="-1" id="WMV-7O-v6a"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="button_video_normal.png" width="75" height="75"/>
+        <image name="icon_flip_normal.png" width="44" height="44"/>
+    </resources>
+</document>

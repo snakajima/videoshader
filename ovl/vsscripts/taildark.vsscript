@@ -1,0 +1,12 @@
+{
+    "title":"Tail Dark",
+    "pipeline":[
+        { "control":"previous" },
+        { "source":"color", "attr":{ "color":[1.0, 1.0, 1.0, 0.1] } },
+        { "blender":"alpha",
+          "ui":{ "primary":["ratio"] },
+          "attr": { "ratio":0.2 } },
+        { "blender":"darken" },
+        { "control":"fork" }
+    ]
+}

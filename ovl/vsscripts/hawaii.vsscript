@@ -1,0 +1,76 @@
+{
+  "title" : "Hawaii",
+  "pipeline" : [
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "mono",
+      "attr" : {
+        "color" : [
+          1,
+          1,
+          1,
+          1
+        ],
+        "weight" : [
+          0.299,
+          0.587,
+          0.114
+        ]
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 6.425
+      },
+      "ui" : {
+        "primary":["radius"]
+      }
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+      }
+    },
+    {
+      "filter" : "max_blur",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "enhancer",
+      "attr" : {
+        "red" : [
+          0,
+          0.5972222
+        ],
+        "green" : [
+          0.2555556,
+          0.675
+        ],
+        "blue" : [
+          0.3111111,
+          1
+        ]
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

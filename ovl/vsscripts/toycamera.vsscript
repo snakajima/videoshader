@@ -1,0 +1,10 @@
+{
+    "title":"Toy Camera",
+    "pipeline":[
+        { "filter":"contrast",
+            "attr":{"enhance":0.4},
+            "ui":{ "primary":["enhance"] } },
+        { "source":"circle", "attr": { "radius":2.5, "power":3.0, "color":[0.3, 0.7, 0.0] }},
+        { "blender":"alpha" },
+    ]
+}

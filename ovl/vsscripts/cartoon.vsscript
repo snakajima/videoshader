@@ -1,0 +1,14 @@
+{
+    "title":"Cartoon I",
+    "pipeline":[
+        { "filter":"boxblur", "ui":{ "primary":["radius"] }, "attr":{"radius":2.0} },
+        { "control":"fork" },
+        { "filter":"boxblur", "attr":{"radius":2.0} },
+        { "filter":"toone", "ui":{ "hidden":["weight"] } },
+        { "control":"swap" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{ "threshold":0.19, "thin":0.50 } },
+        { "filter":"anti_alias" },
+        { "blender":"alpha" }
+    ]
+}

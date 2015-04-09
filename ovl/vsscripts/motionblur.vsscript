@@ -1,0 +1,10 @@
+{
+    "title":"Motion Blur",
+    "pipeline":[
+        { "control":"previous" },
+        { "blender":"alpha",
+          "ui":{ "primary":["ratio"] },
+          "attr": { "ratio":0.8 } },
+        { "control":"fork" }
+    ]
+}

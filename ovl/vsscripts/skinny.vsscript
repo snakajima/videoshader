@@ -1,0 +1,6 @@
+{
+    "title":"Skinny",
+    "pipeline":[
+        { "filter":"stretch", "attr": { "ratio":[1.0, 1.15] } },
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title":"Color Dots",
+    "pipeline":[
+        { "filter":"max_blur" },
+        { "filter":"max_blur_cross" },
+        { "filter":"max_blur" },
+        { "filter":"max_blur_cross" },
+        { "filter":"max_blur" },
+        { "filter":"max_blur_cross" },
+        { "filter":"max_blur" },
+        { "filter":"max_blur_cross" },
+    ]
+}

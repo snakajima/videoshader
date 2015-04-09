@@ -1,0 +1,11 @@
+{
+    "title":"Smoked Glass",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"gaussianblur", "attr":{ "radius":40.0 } },
+        { "source":"color", "attr":{ "color":[1.0,1.0,1.0,1.0] } },
+        { "blender":"alpha", "attr":{ "ratio":0.7 } },
+        { "source":"circle", "attr":{ "power":4.0 } },
+        { "mixer":"mixer" },
+    ]
+}

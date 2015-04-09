@@ -1,0 +1,103 @@
+{
+  "title" : "Delicious",
+  "pipeline" : [
+    {
+      "filter" : "lighter",
+      "attr" : {
+        "ratio" : 1.05
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "enhancer",
+      "attr" : {
+        "red" : [
+          0,
+          0.9
+        ],
+        "green" : [
+          0,
+          1
+        ],
+        "blue" : [
+          0,
+          1
+        ]
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "saturate",
+      "ui":{ "primary":["ratio"] }, 
+      "attr" : {
+        "ratio" : 0.15,
+        "weight" : [
+          0.2126,
+          0.7151999999999999,
+          0.0722
+        ]
+      },
+      "ui" : {
+        "hidden" : [
+          "weight"
+        ]
+      }
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "gaussianblur",
+      "attr" : {
+        "radius" : 2
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "blender" : "differentiate",
+      "attr" : {
+        "ratio" : 2
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "ui" : {
+
+      },
+      "attr" : {
+        "power" : 6.416667,
+        "color1" : [
+          0,
+          0,
+          0,
+          0
+        ],
+        "color2" : [
+          0,
+          0,
+          0,
+          1
+        ],
+        "radius" : 1
+      },
+      "source" : "circle"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 0.2666094
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

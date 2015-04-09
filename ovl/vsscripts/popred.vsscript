@@ -1,0 +1,23 @@
+{
+    "title":"Pop Art & Red Detect",
+    "pipeline":[
+        { "filter":"boxblur" },
+        { "control":"fork" },
+        { "source":"color", "attr":{ "color":[1.0, 1.0, 0.0, 1.0] }},
+        { "control":"swap" },
+        { "source":"color", "attr":{ "color":[1.0, 0.0, 0.0, 1.0] }},
+        { "control":"swap" },
+        
+        { "filter":"boxblur", "attr":{ "radius":8.0 } },
+        { "filter":"hue_filter", "attr":{ "hue":[345.0, 7.5], "chroma":[0.15, 1.0] } },
+        { "mixer":"mixer" },
+        { "control":"swap" },
+        { "filter":"sobel" },
+        { "filter":"canny_edge", "attr":{
+            "threshold":0.21,
+            "thin":0.0,
+            "color":[0.0, 0.0, 1.0, 1.0] } },
+        { "filter":"anti_alias" },
+        { "blender":"alpha" },
+    ]
+}

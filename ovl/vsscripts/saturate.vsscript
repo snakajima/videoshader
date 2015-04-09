@@ -1,0 +1,6 @@
+{
+    "title":"Saturate",
+    "pipeline":[
+        { "filter":"saturate", "attr":{ "ratio":1.0 } },
+    ]
+}

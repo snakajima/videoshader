@@ -1,0 +1,11 @@
+{
+    "title":"Color Tracker",
+    "pipeline":[
+        { "control":"previous" },
+        { "blender":"colortracker",
+          "attr":{ "color":[1.0, 1.0, 0.12], "ratio":0.95, "range":[0.34, 0.80] },
+          "ui":{ "primary":["ratio", "color", "range"] }
+        },
+        { "control":"fork" }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "title":"Hipass",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"boxblur", "attr":{"radius":4.0} },
+        { "filter":"invert" },
+        { "blender":"alpha", "attr":{"ratio":0.5} },
+        { "filter":"contrast", "attr":{"enhance":1.0} }
+    ]
+}

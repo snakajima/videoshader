@@ -1,0 +1,1146 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		74046BE21AD4AA6F00A2017A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74046BE11AD4AA6F00A2017A /* AppDelegate.swift */; };
+		74046BE41AD4AA6F00A2017A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74046BE31AD4AA6F00A2017A /* SampleViewController.swift */; };
+		74046BE91AD4AA6F00A2017A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74046BE81AD4AA6F00A2017A /* Images.xcassets */; };
+		74046BEC1AD4AA7000A2017A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74046BEA1AD4AA7000A2017A /* LaunchScreen.xib */; };
+		74046BF81AD4AA7000A2017A /* videoshaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74046BF71AD4AA7000A2017A /* videoshaderTests.swift */; };
+		74046C7A1AD4AB4F00A2017A /* OVLBaseShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C041AD4AB4F00A2017A /* OVLBaseShader.m */; };
+		74046C7B1AD4AB4F00A2017A /* OVLBlender.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C061AD4AB4F00A2017A /* OVLBlender.m */; };
+		74046C7C1AD4AB4F00A2017A /* OVLBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C081AD4AB4F00A2017A /* OVLBlurFilter.m */; };
+		74046C7D1AD4AB4F00A2017A /* OVLFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C0A1AD4AB4F00A2017A /* OVLFilter.m */; };
+		74046C7E1AD4AB4F00A2017A /* OVLFork.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C0C1AD4AB4F00A2017A /* OVLFork.m */; };
+		74046C7F1AD4AB4F00A2017A /* OVLMixer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C0E1AD4AB4F00A2017A /* OVLMixer.m */; };
+		74046C801AD4AB4F00A2017A /* OVLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C101AD4AB4F00A2017A /* OVLNode.m */; };
+		74046C811AD4AB4F00A2017A /* OVLOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C121AD4AB4F00A2017A /* OVLOpenGLView.m */; };
+		74046C821AD4AB4F00A2017A /* OVLPlaneShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C141AD4AB4F00A2017A /* OVLPlaneShaders.m */; };
+		74046C831AD4AB4F00A2017A /* OVLPrev.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C161AD4AB4F00A2017A /* OVLPrev.m */; };
+		74046C841AD4AB4F00A2017A /* OVLScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C181AD4AB4F00A2017A /* OVLScript.m */; };
+		74046C851AD4AB4F00A2017A /* OVLShaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C1A1AD4AB4F00A2017A /* OVLShaderManager.m */; };
+		74046C861AD4AB4F00A2017A /* OVLShift.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C1C1AD4AB4F00A2017A /* OVLShift.m */; };
+		74046C871AD4AB4F00A2017A /* OVLSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C1E1AD4AB4F00A2017A /* OVLSource.m */; };
+		74046C881AD4AB4F00A2017A /* OVLSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C201AD4AB4F00A2017A /* OVLSwap.m */; };
+		74046C891AD4AB4F00A2017A /* OVLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C221AD4AB4F00A2017A /* OVLTexture.m */; };
+		74046C8A1AD4AB4F00A2017A /* OVLTexturedFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C241AD4AB4F00A2017A /* OVLTexturedFilter.m */; };
+		74046C8B1AD4AB4F00A2017A /* OVLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74046C261AD4AB4F00A2017A /* OVLViewController.m */; };
+		74046C8C1AD4AB4F00A2017A /* alpha.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C281AD4AB4F00A2017A /* alpha.fsh */; };
+		74046C8D1AD4AB4F00A2017A /* alphamask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C291AD4AB4F00A2017A /* alphamask.fsh */; };
+		74046C8E1AD4AB4F00A2017A /* altalpha.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2A1AD4AB4F00A2017A /* altalpha.fsh */; };
+		74046C8F1AD4AB4F00A2017A /* altcolor.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2B1AD4AB4F00A2017A /* altcolor.fsh */; };
+		74046C901AD4AB4F00A2017A /* anti_alias.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2C1AD4AB4F00A2017A /* anti_alias.fsh */; };
+		74046C911AD4AB4F00A2017A /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2D1AD4AB4F00A2017A /* blur.fsh */; };
+		74046C921AD4AB4F00A2017A /* boolean.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2E1AD4AB4F00A2017A /* boolean.fsh */; };
+		74046C931AD4AB4F00A2017A /* boxblur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C2F1AD4AB4F00A2017A /* boxblur.fsh */; };
+		74046C941AD4AB4F00A2017A /* canny_edge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C301AD4AB4F00A2017A /* canny_edge.fsh */; };
+		74046C951AD4AB4F00A2017A /* checker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C311AD4AB4F00A2017A /* checker.fsh */; };
+		74046C961AD4AB4F00A2017A /* circle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C321AD4AB4F00A2017A /* circle.fsh */; };
+		74046C971AD4AB4F00A2017A /* color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C331AD4AB4F00A2017A /* color.fsh */; };
+		74046C981AD4AB4F00A2017A /* colorblend.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C341AD4AB4F00A2017A /* colorblend.fsh */; };
+		74046C991AD4AB4F00A2017A /* colorburn.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C351AD4AB4F00A2017A /* colorburn.fsh */; };
+		74046C9A1AD4AB4F00A2017A /* colordodge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C361AD4AB4F00A2017A /* colordodge.fsh */; };
+		74046C9B1AD4AB4F00A2017A /* colortracker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C371AD4AB4F00A2017A /* colortracker.fsh */; };
+		74046C9C1AD4AB4F00A2017A /* contrast.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C381AD4AB4F00A2017A /* contrast.fsh */; };
+		74046C9D1AD4AB4F00A2017A /* copy.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C391AD4AB4F00A2017A /* copy.fsh */; };
+		74046C9E1AD4AB4F00A2017A /* darken.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3A1AD4AB4F00A2017A /* darken.fsh */; };
+		74046C9F1AD4AB4F00A2017A /* delta.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3B1AD4AB4F00A2017A /* delta.fsh */; };
+		74046CA01AD4AB4F00A2017A /* difference.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3C1AD4AB4F00A2017A /* difference.fsh */; };
+		74046CA11AD4AB4F00A2017A /* differentiate.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3D1AD4AB4F00A2017A /* differentiate.fsh */; };
+		74046CA21AD4AB4F00A2017A /* embold.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3E1AD4AB4F00A2017A /* embold.fsh */; };
+		74046CA31AD4AB4F00A2017A /* emboss.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C3F1AD4AB4F00A2017A /* emboss.fsh */; };
+		74046CA41AD4AB4F00A2017A /* enhancer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C401AD4AB4F00A2017A /* enhancer.fsh */; };
+		74046CA51AD4AB4F00A2017A /* exclusion.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C411AD4AB4F00A2017A /* exclusion.fsh */; };
+		74046CA61AD4AB4F00A2017A /* gaussianblur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C421AD4AB4F00A2017A /* gaussianblur.fsh */; };
+		74046CA71AD4AB4F00A2017A /* gradient.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C431AD4AB4F00A2017A /* gradient.fsh */; };
+		74046CA81AD4AB4F00A2017A /* gradientmap.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C441AD4AB4F00A2017A /* gradientmap.fsh */; };
+		74046CA91AD4AB4F00A2017A /* halftone.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C451AD4AB4F00A2017A /* halftone.fsh */; };
+		74046CAA1AD4AB4F00A2017A /* hardlight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C461AD4AB4F00A2017A /* hardlight.fsh */; };
+		74046CAB1AD4AB4F00A2017A /* hue.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C471AD4AB4F00A2017A /* hue.fsh */; };
+		74046CAC1AD4AB4F00A2017A /* hue_filter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C481AD4AB4F00A2017A /* hue_filter.fsh */; };
+		74046CAD1AD4AB4F00A2017A /* hueshift.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C491AD4AB4F00A2017A /* hueshift.fsh */; };
+		74046CAE1AD4AB4F00A2017A /* invert.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4A1AD4AB4F00A2017A /* invert.fsh */; };
+		74046CAF1AD4AB4F00A2017A /* invertalpha.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4B1AD4AB4F00A2017A /* invertalpha.fsh */; };
+		74046CB01AD4AB4F00A2017A /* lighten.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4C1AD4AB4F00A2017A /* lighten.fsh */; };
+		74046CB11AD4AB4F00A2017A /* lighter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4D1AD4AB4F00A2017A /* lighter.fsh */; };
+		74046CB21AD4AB4F00A2017A /* loudness.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4E1AD4AB4F00A2017A /* loudness.fsh */; };
+		74046CB31AD4AB4F00A2017A /* luminosity.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C4F1AD4AB4F00A2017A /* luminosity.fsh */; };
+		74046CB41AD4AB4F00A2017A /* max_blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C501AD4AB4F00A2017A /* max_blur.fsh */; };
+		74046CB51AD4AB4F00A2017A /* max_blur_cross.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C511AD4AB4F00A2017A /* max_blur_cross.fsh */; };
+		74046CB61AD4AB4F00A2017A /* mirror.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C521AD4AB4F00A2017A /* mirror.fsh */; };
+		74046CB71AD4AB4F00A2017A /* mixer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C531AD4AB4F00A2017A /* mixer.fsh */; };
+		74046CB81AD4AB4F00A2017A /* mono.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C541AD4AB4F00A2017A /* mono.fsh */; };
+		74046CB91AD4AB4F00A2017A /* multiply.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C551AD4AB4F00A2017A /* multiply.fsh */; };
+		74046CBA1AD4AB4F00A2017A /* offset.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C561AD4AB4F00A2017A /* offset.fsh */; };
+		74046CBB1AD4AB4F00A2017A /* overlay.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C571AD4AB4F00A2017A /* overlay.fsh */; };
+		74046CBC1AD4AB4F00A2017A /* rainbow.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C581AD4AB4F00A2017A /* rainbow.fsh */; };
+		74046CBD1AD4AB4F00A2017A /* rotation.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C591AD4AB4F00A2017A /* rotation.fsh */; };
+		74046CBE1AD4AB4F00A2017A /* saturate.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5A1AD4AB4F00A2017A /* saturate.fsh */; };
+		74046CBF1AD4AB4F00A2017A /* saturation.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5B1AD4AB4F00A2017A /* saturation.fsh */; };
+		74046CC01AD4AB4F00A2017A /* screen.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5C1AD4AB4F00A2017A /* screen.fsh */; };
+		74046CC11AD4AB4F00A2017A /* simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5D1AD4AB4F00A2017A /* simple.fsh */; };
+		74046CC21AD4AB4F00A2017A /* simple_cutoff.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5E1AD4AB4F00A2017A /* simple_cutoff.fsh */; };
+		74046CC31AD4AB4F00A2017A /* slice.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C5F1AD4AB4F00A2017A /* slice.fsh */; };
+		74046CC41AD4AB4F00A2017A /* sobel.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C601AD4AB4F00A2017A /* sobel.fsh */; };
+		74046CC51AD4AB4F00A2017A /* softlight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C611AD4AB4F00A2017A /* softlight.fsh */; };
+		74046CC61AD4AB4F00A2017A /* stretch.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C621AD4AB4F00A2017A /* stretch.fsh */; };
+		74046CC71AD4AB4F00A2017A /* superimpose.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C631AD4AB4F00A2017A /* superimpose.fsh */; };
+		74046CC81AD4AB4F00A2017A /* texture.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C641AD4AB4F00A2017A /* texture.fsh */; };
+		74046CC91AD4AB4F00A2017A /* tilt_shift.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C651AD4AB4F00A2017A /* tilt_shift.fsh */; };
+		74046CCA1AD4AB4F00A2017A /* timedzoom.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C661AD4AB4F00A2017A /* timedzoom.fsh */; };
+		74046CCB1AD4AB4F00A2017A /* tint.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C671AD4AB4F00A2017A /* tint.fsh */; };
+		74046CCC1AD4AB4F00A2017A /* tone_curve_6.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C681AD4AB4F00A2017A /* tone_curve_6.fsh */; };
+		74046CCD1AD4AB4F00A2017A /* toone.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C691AD4AB4F00A2017A /* toone.fsh */; };
+		74046CCE1AD4AB4F00A2017A /* watermark.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C6A1AD4AB4F00A2017A /* watermark.fsh */; };
+		74046CCF1AD4AB4F00A2017A /* wave.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C6B1AD4AB4F00A2017A /* wave.fsh */; };
+		74046CD01AD4AB4F00A2017A /* aspect.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C6D1AD4AB4F00A2017A /* aspect.vsh */; };
+		74046CD11AD4AB4F00A2017A /* aspect_rotation.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C6E1AD4AB4F00A2017A /* aspect_rotation.vsh */; };
+		74046CD21AD4AB4F00A2017A /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C6F1AD4AB4F00A2017A /* blur.vsh */; };
+		74046CD31AD4AB4F00A2017A /* convolve.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C701AD4AB4F00A2017A /* convolve.vsh */; };
+		74046CD41AD4AB4F00A2017A /* Convolve8RotFlip.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C711AD4AB4F00A2017A /* Convolve8RotFlip.vsh */; };
+		74046CD51AD4AB4F00A2017A /* offset.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C721AD4AB4F00A2017A /* offset.vsh */; };
+		74046CD61AD4AB4F00A2017A /* rotation.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C731AD4AB4F00A2017A /* rotation.vsh */; };
+		74046CD71AD4AB4F00A2017A /* rotation_left.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C741AD4AB4F00A2017A /* rotation_left.vsh */; };
+		74046CD81AD4AB4F00A2017A /* rotation_right.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C751AD4AB4F00A2017A /* rotation_right.vsh */; };
+		74046CD91AD4AB4F00A2017A /* simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C761AD4AB4F00A2017A /* simple.vsh */; };
+		74046CDA1AD4AB4F00A2017A /* stretch.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C771AD4AB4F00A2017A /* stretch.vsh */; };
+		74046CDB1AD4AB4F00A2017A /* timedzoom.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C781AD4AB4F00A2017A /* timedzoom.vsh */; };
+		74046CDC1AD4AB4F00A2017A /* upsidedown.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 74046C791AD4AB4F00A2017A /* upsidedown.vsh */; };
+		74046CDE1AD4AD5B00A2017A /* shaders.js in Resources */ = {isa = PBXBuildFile; fileRef = 74046CDD1AD4AD5B00A2017A /* shaders.js */; };
+		74046D6B1AD4AF9A00A2017A /* cartoon.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D3D1AD4AF9A00A2017A /* cartoon.vsscript */; };
+		74046D6C1AD4AF9A00A2017A /* cartoon_hipass.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D3E1AD4AF9A00A2017A /* cartoon_hipass.vsscript */; };
+		74046D6D1AD4AF9A00A2017A /* checker.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D3F1AD4AF9A00A2017A /* checker.vsscript */; };
+		74046D6E1AD4AF9A00A2017A /* colordots2.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D401AD4AF9A00A2017A /* colordots2.vsscript */; };
+		74046D6F1AD4AF9A00A2017A /* coloroffset.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D411AD4AF9A00A2017A /* coloroffset.vsscript */; };
+		74046D701AD4AF9A00A2017A /* colorsketch.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D421AD4AF9A00A2017A /* colorsketch.vsscript */; };
+		74046D711AD4AF9A00A2017A /* colortracker.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D431AD4AF9A00A2017A /* colortracker.vsscript */; };
+		74046D721AD4AF9A00A2017A /* delicious.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D441AD4AF9A00A2017A /* delicious.vsscript */; };
+		74046D731AD4AF9A00A2017A /* edgecanny.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D451AD4AF9A00A2017A /* edgecanny.vsscript */; };
+		74046D741AD4AF9A00A2017A /* edgehipass.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D461AD4AF9A00A2017A /* edgehipass.vsscript */; };
+		74046D751AD4AF9A00A2017A /* emboss.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D471AD4AF9A00A2017A /* emboss.vsscript */; };
+		74046D761AD4AF9A00A2017A /* gradientmap.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D481AD4AF9A00A2017A /* gradientmap.vsscript */; };
+		74046D771AD4AF9A00A2017A /* halftonegradient.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D491AD4AF9A00A2017A /* halftonegradient.vsscript */; };
+		74046D781AD4AF9A00A2017A /* hawaii.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4A1AD4AF9A00A2017A /* hawaii.vsscript */; };
+		74046D791AD4AF9A00A2017A /* hipass.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4B1AD4AF9A00A2017A /* hipass.vsscript */; };
+		74046D7A1AD4AF9A00A2017A /* matrix1.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4C1AD4AF9A00A2017A /* matrix1.vsscript */; };
+		74046D7B1AD4AF9A00A2017A /* matrix2.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4D1AD4AF9A00A2017A /* matrix2.vsscript */; };
+		74046D7C1AD4AF9A00A2017A /* monochrome.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4E1AD4AF9A00A2017A /* monochrome.vsscript */; };
+		74046D7D1AD4AF9A00A2017A /* motionblur.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D4F1AD4AF9A00A2017A /* motionblur.vsscript */; };
+		74046D7E1AD4AF9A00A2017A /* motiondetector.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D501AD4AF9A00A2017A /* motiondetector.vsscript */; };
+		74046D7F1AD4AF9A00A2017A /* night.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D511AD4AF9A00A2017A /* night.vsscript */; };
+		74046D801AD4AF9A00A2017A /* pixelize.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D521AD4AF9A00A2017A /* pixelize.vsscript */; };
+		74046D811AD4AF9A00A2017A /* popred.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D531AD4AF9A00A2017A /* popred.vsscript */; };
+		74046D821AD4AF9A00A2017A /* red.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D541AD4AF9A00A2017A /* red.vsscript */; };
+		74046D831AD4AF9A00A2017A /* saturate.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D551AD4AF9A00A2017A /* saturate.vsscript */; };
+		74046D841AD4AF9A00A2017A /* sharpen.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D561AD4AF9A00A2017A /* sharpen.vsscript */; };
+		74046D851AD4AF9A00A2017A /* shift.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D571AD4AF9A00A2017A /* shift.vsscript */; };
+		74046D861AD4AF9A00A2017A /* sketch.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D581AD4AF9A00A2017A /* sketch.vsscript */; };
+		74046D871AD4AF9A00A2017A /* skinny.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D591AD4AF9A00A2017A /* skinny.vsscript */; };
+		74046D881AD4AF9A00A2017A /* smokedglass.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5A1AD4AF9A00A2017A /* smokedglass.vsscript */; };
+		74046D891AD4AF9A00A2017A /* smoothskin.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5B1AD4AF9A00A2017A /* smoothskin.vsscript */; };
+		74046D8A1AD4AF9A00A2017A /* soundpicker.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5C1AD4AF9A00A2017A /* soundpicker.vsscript */; };
+		74046D8B1AD4AF9A00A2017A /* stackoverflow.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5D1AD4AF9A00A2017A /* stackoverflow.vsscript */; };
+		74046D8C1AD4AF9A00A2017A /* stackunderflow.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5E1AD4AF9A00A2017A /* stackunderflow.vsscript */; };
+		74046D8D1AD4AF9A00A2017A /* taildark.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D5F1AD4AF9A00A2017A /* taildark.vsscript */; };
+		74046D8E1AD4AF9A00A2017A /* taillight.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D601AD4AF9A00A2017A /* taillight.vsscript */; };
+		74046D8F1AD4AF9A00A2017A /* tiltshift.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D611AD4AF9A00A2017A /* tiltshift.vsscript */; };
+		74046D901AD4AF9A00A2017A /* tiltshift2.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D621AD4AF9A00A2017A /* tiltshift2.vsscript */; };
+		74046D911AD4AF9A00A2017A /* toycamera.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D631AD4AF9A00A2017A /* toycamera.vsscript */; };
+		74046D921AD4AF9A00A2017A /* vintage.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D641AD4AF9A00A2017A /* vintage.vsscript */; };
+		74046D931AD4AF9A00A2017A /* watercolor.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D651AD4AF9A00A2017A /* watercolor.vsscript */; };
+		74046D941AD4AF9A00A2017A /* whitevision.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D661AD4AF9A00A2017A /* whitevision.vsscript */; };
+		74046D951AD4AF9A00A2017A /* xmas.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D671AD4AF9A00A2017A /* xmas.vsscript */; };
+		74046D961AD4AF9A00A2017A /* xray.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D681AD4AF9A00A2017A /* xray.vsscript */; };
+		74046D971AD4AF9A00A2017A /* xrays.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D691AD4AF9A00A2017A /* xrays.vsscript */; };
+		74046D981AD4AF9A00A2017A /* yeswecan.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D6A1AD4AF9A00A2017A /* yeswecan.vsscript */; };
+		74046D9A1AD4B01900A2017A /* bubbles.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D991AD4B01900A2017A /* bubbles.vsscript */; };
+		74046D9C1AD4B05300A2017A /* enhancer.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D9B1AD4B05300A2017A /* enhancer.vsscript */; };
+		74046D9E1AD4B05D00A2017A /* freeza.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D9D1AD4B05D00A2017A /* freeza.vsscript */; };
+		74046DA01AD4B06D00A2017A /* gradient.vsscript in Resources */ = {isa = PBXBuildFile; fileRef = 74046D9F1AD4B06D00A2017A /* gradient.vsscript */; };
+		74046DA61AD4CAAF00A2017A /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74046DA51AD4CAAF00A2017A /* Application.xib */; };
+		74046DAE1AD4DF5B00A2017A /* Lenna.png in Resources */ = {isa = PBXBuildFile; fileRef = 74046DAD1AD4DF5B00A2017A /* Lenna.png */; };
+		74046DB71AD4EF2600A2017A /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74046DB61AD4EF2600A2017A /* SampleViewController.xib */; };
+		74046DB91AD548FC00A2017A /* photo_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74046DB81AD548FC00A2017A /* photo_normal@2x.png */; };
+		74046DBB1AD5497100A2017A /* Lenna256.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 74046DBA1AD5497100A2017A /* Lenna256.tiff */; };
+		74E6321C1AD5E09D001F9B05 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6321B1AD5E09D001F9B05 /* NotificationManager.swift */; };
+		74E6321F1AD5E14B001F9B05 /* button_video_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E6321D1AD5E14B001F9B05 /* button_video_normal@2x.png */; };
+		74E632201AD5E14B001F9B05 /* button_video_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E6321E1AD5E14B001F9B05 /* button_video_pressed@2x.png */; };
+		74E632231AD5E17C001F9B05 /* icon_flip_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E632211AD5E17C001F9B05 /* icon_flip_normal@2x.png */; };
+		74E632241AD5E17C001F9B05 /* icon_flip_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74E632221AD5E17C001F9B05 /* icon_flip_pressed@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74046BF21AD4AA7000A2017A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74046BD41AD4AA6F00A2017A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74046BDB1AD4AA6F00A2017A;
+			remoteInfo = videoshader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		74046BDC1AD4AA6F00A2017A /* videoshader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = videoshader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74046BE01AD4AA6F00A2017A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74046BE11AD4AA6F00A2017A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74046BE31AD4AA6F00A2017A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		74046BE81AD4AA6F00A2017A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		74046BEB1AD4AA7000A2017A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		74046BF11AD4AA7000A2017A /* videoshaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = videoshaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74046BF61AD4AA7000A2017A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74046BF71AD4AA7000A2017A /* videoshaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoshaderTests.swift; sourceTree = "<group>"; };
+		74046C031AD4AB4F00A2017A /* OVLBaseShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLBaseShader.h; sourceTree = "<group>"; };
+		74046C041AD4AB4F00A2017A /* OVLBaseShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLBaseShader.m; sourceTree = "<group>"; };
+		74046C051AD4AB4F00A2017A /* OVLBlender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLBlender.h; sourceTree = "<group>"; };
+		74046C061AD4AB4F00A2017A /* OVLBlender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLBlender.m; sourceTree = "<group>"; };
+		74046C071AD4AB4F00A2017A /* OVLBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLBlurFilter.h; sourceTree = "<group>"; };
+		74046C081AD4AB4F00A2017A /* OVLBlurFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLBlurFilter.m; sourceTree = "<group>"; };
+		74046C091AD4AB4F00A2017A /* OVLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLFilter.h; sourceTree = "<group>"; };
+		74046C0A1AD4AB4F00A2017A /* OVLFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLFilter.m; sourceTree = "<group>"; };
+		74046C0B1AD4AB4F00A2017A /* OVLFork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLFork.h; sourceTree = "<group>"; };
+		74046C0C1AD4AB4F00A2017A /* OVLFork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLFork.m; sourceTree = "<group>"; };
+		74046C0D1AD4AB4F00A2017A /* OVLMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLMixer.h; sourceTree = "<group>"; };
+		74046C0E1AD4AB4F00A2017A /* OVLMixer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLMixer.m; sourceTree = "<group>"; };
+		74046C0F1AD4AB4F00A2017A /* OVLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLNode.h; sourceTree = "<group>"; };
+		74046C101AD4AB4F00A2017A /* OVLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLNode.m; sourceTree = "<group>"; };
+		74046C111AD4AB4F00A2017A /* OVLOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLOpenGLView.h; sourceTree = "<group>"; };
+		74046C121AD4AB4F00A2017A /* OVLOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLOpenGLView.m; sourceTree = "<group>"; };
+		74046C131AD4AB4F00A2017A /* OVLPlaneShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLPlaneShaders.h; sourceTree = "<group>"; };
+		74046C141AD4AB4F00A2017A /* OVLPlaneShaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLPlaneShaders.m; sourceTree = "<group>"; };
+		74046C151AD4AB4F00A2017A /* OVLPrev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLPrev.h; sourceTree = "<group>"; };
+		74046C161AD4AB4F00A2017A /* OVLPrev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLPrev.m; sourceTree = "<group>"; };
+		74046C171AD4AB4F00A2017A /* OVLScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLScript.h; sourceTree = "<group>"; };
+		74046C181AD4AB4F00A2017A /* OVLScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLScript.m; sourceTree = "<group>"; };
+		74046C191AD4AB4F00A2017A /* OVLShaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLShaderManager.h; sourceTree = "<group>"; };
+		74046C1A1AD4AB4F00A2017A /* OVLShaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLShaderManager.m; sourceTree = "<group>"; };
+		74046C1B1AD4AB4F00A2017A /* OVLShift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLShift.h; sourceTree = "<group>"; };
+		74046C1C1AD4AB4F00A2017A /* OVLShift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLShift.m; sourceTree = "<group>"; };
+		74046C1D1AD4AB4F00A2017A /* OVLSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLSource.h; sourceTree = "<group>"; };
+		74046C1E1AD4AB4F00A2017A /* OVLSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLSource.m; sourceTree = "<group>"; };
+		74046C1F1AD4AB4F00A2017A /* OVLSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLSwap.h; sourceTree = "<group>"; };
+		74046C201AD4AB4F00A2017A /* OVLSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLSwap.m; sourceTree = "<group>"; };
+		74046C211AD4AB4F00A2017A /* OVLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLTexture.h; sourceTree = "<group>"; };
+		74046C221AD4AB4F00A2017A /* OVLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLTexture.m; sourceTree = "<group>"; };
+		74046C231AD4AB4F00A2017A /* OVLTexturedFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLTexturedFilter.h; sourceTree = "<group>"; };
+		74046C241AD4AB4F00A2017A /* OVLTexturedFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLTexturedFilter.m; sourceTree = "<group>"; };
+		74046C251AD4AB4F00A2017A /* OVLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLViewController.h; sourceTree = "<group>"; };
+		74046C261AD4AB4F00A2017A /* OVLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVLViewController.m; sourceTree = "<group>"; };
+		74046C281AD4AB4F00A2017A /* alpha.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = alpha.fsh; sourceTree = "<group>"; };
+		74046C291AD4AB4F00A2017A /* alphamask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = alphamask.fsh; sourceTree = "<group>"; };
+		74046C2A1AD4AB4F00A2017A /* altalpha.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = altalpha.fsh; sourceTree = "<group>"; };
+		74046C2B1AD4AB4F00A2017A /* altcolor.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = altcolor.fsh; sourceTree = "<group>"; };
+		74046C2C1AD4AB4F00A2017A /* anti_alias.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = anti_alias.fsh; sourceTree = "<group>"; };
+		74046C2D1AD4AB4F00A2017A /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur.fsh; sourceTree = "<group>"; };
+		74046C2E1AD4AB4F00A2017A /* boolean.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = boolean.fsh; sourceTree = "<group>"; };
+		74046C2F1AD4AB4F00A2017A /* boxblur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = boxblur.fsh; sourceTree = "<group>"; };
+		74046C301AD4AB4F00A2017A /* canny_edge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = canny_edge.fsh; sourceTree = "<group>"; };
+		74046C311AD4AB4F00A2017A /* checker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = checker.fsh; sourceTree = "<group>"; };
+		74046C321AD4AB4F00A2017A /* circle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = circle.fsh; sourceTree = "<group>"; };
+		74046C331AD4AB4F00A2017A /* color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = color.fsh; sourceTree = "<group>"; };
+		74046C341AD4AB4F00A2017A /* colorblend.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorblend.fsh; sourceTree = "<group>"; };
+		74046C351AD4AB4F00A2017A /* colorburn.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorburn.fsh; sourceTree = "<group>"; };
+		74046C361AD4AB4F00A2017A /* colordodge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colordodge.fsh; sourceTree = "<group>"; };
+		74046C371AD4AB4F00A2017A /* colortracker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colortracker.fsh; sourceTree = "<group>"; };
+		74046C381AD4AB4F00A2017A /* contrast.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = contrast.fsh; sourceTree = "<group>"; };
+		74046C391AD4AB4F00A2017A /* copy.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = copy.fsh; sourceTree = "<group>"; };
+		74046C3A1AD4AB4F00A2017A /* darken.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = darken.fsh; sourceTree = "<group>"; };
+		74046C3B1AD4AB4F00A2017A /* delta.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = delta.fsh; sourceTree = "<group>"; };
+		74046C3C1AD4AB4F00A2017A /* difference.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = difference.fsh; sourceTree = "<group>"; };
+		74046C3D1AD4AB4F00A2017A /* differentiate.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = differentiate.fsh; sourceTree = "<group>"; };
+		74046C3E1AD4AB4F00A2017A /* embold.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = embold.fsh; sourceTree = "<group>"; };
+		74046C3F1AD4AB4F00A2017A /* emboss.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = emboss.fsh; sourceTree = "<group>"; };
+		74046C401AD4AB4F00A2017A /* enhancer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = enhancer.fsh; sourceTree = "<group>"; };
+		74046C411AD4AB4F00A2017A /* exclusion.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = exclusion.fsh; sourceTree = "<group>"; };
+		74046C421AD4AB4F00A2017A /* gaussianblur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gaussianblur.fsh; sourceTree = "<group>"; };
+		74046C431AD4AB4F00A2017A /* gradient.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gradient.fsh; sourceTree = "<group>"; };
+		74046C441AD4AB4F00A2017A /* gradientmap.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gradientmap.fsh; sourceTree = "<group>"; };
+		74046C451AD4AB4F00A2017A /* halftone.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = halftone.fsh; sourceTree = "<group>"; };
+		74046C461AD4AB4F00A2017A /* hardlight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hardlight.fsh; sourceTree = "<group>"; };
+		74046C471AD4AB4F00A2017A /* hue.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hue.fsh; sourceTree = "<group>"; };
+		74046C481AD4AB4F00A2017A /* hue_filter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hue_filter.fsh; sourceTree = "<group>"; };
+		74046C491AD4AB4F00A2017A /* hueshift.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = hueshift.fsh; sourceTree = "<group>"; };
+		74046C4A1AD4AB4F00A2017A /* invert.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = invert.fsh; sourceTree = "<group>"; };
+		74046C4B1AD4AB4F00A2017A /* invertalpha.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = invertalpha.fsh; sourceTree = "<group>"; };
+		74046C4C1AD4AB4F00A2017A /* lighten.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lighten.fsh; sourceTree = "<group>"; };
+		74046C4D1AD4AB4F00A2017A /* lighter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lighter.fsh; sourceTree = "<group>"; };
+		74046C4E1AD4AB4F00A2017A /* loudness.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = loudness.fsh; sourceTree = "<group>"; };
+		74046C4F1AD4AB4F00A2017A /* luminosity.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = luminosity.fsh; sourceTree = "<group>"; };
+		74046C501AD4AB4F00A2017A /* max_blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = max_blur.fsh; sourceTree = "<group>"; };
+		74046C511AD4AB4F00A2017A /* max_blur_cross.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = max_blur_cross.fsh; sourceTree = "<group>"; };
+		74046C521AD4AB4F00A2017A /* mirror.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = mirror.fsh; sourceTree = "<group>"; };
+		74046C531AD4AB4F00A2017A /* mixer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = mixer.fsh; sourceTree = "<group>"; };
+		74046C541AD4AB4F00A2017A /* mono.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = mono.fsh; sourceTree = "<group>"; };
+		74046C551AD4AB4F00A2017A /* multiply.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = multiply.fsh; sourceTree = "<group>"; };
+		74046C561AD4AB4F00A2017A /* offset.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = offset.fsh; sourceTree = "<group>"; };
+		74046C571AD4AB4F00A2017A /* overlay.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = overlay.fsh; sourceTree = "<group>"; };
+		74046C581AD4AB4F00A2017A /* rainbow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = rainbow.fsh; sourceTree = "<group>"; };
+		74046C591AD4AB4F00A2017A /* rotation.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = rotation.fsh; sourceTree = "<group>"; };
+		74046C5A1AD4AB4F00A2017A /* saturate.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = saturate.fsh; sourceTree = "<group>"; };
+		74046C5B1AD4AB4F00A2017A /* saturation.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = saturation.fsh; sourceTree = "<group>"; };
+		74046C5C1AD4AB4F00A2017A /* screen.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = screen.fsh; sourceTree = "<group>"; };
+		74046C5D1AD4AB4F00A2017A /* simple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.fsh; sourceTree = "<group>"; };
+		74046C5E1AD4AB4F00A2017A /* simple_cutoff.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple_cutoff.fsh; sourceTree = "<group>"; };
+		74046C5F1AD4AB4F00A2017A /* slice.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = slice.fsh; sourceTree = "<group>"; };
+		74046C601AD4AB4F00A2017A /* sobel.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sobel.fsh; sourceTree = "<group>"; };
+		74046C611AD4AB4F00A2017A /* softlight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = softlight.fsh; sourceTree = "<group>"; };
+		74046C621AD4AB4F00A2017A /* stretch.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stretch.fsh; sourceTree = "<group>"; };
+		74046C631AD4AB4F00A2017A /* superimpose.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = superimpose.fsh; sourceTree = "<group>"; };
+		74046C641AD4AB4F00A2017A /* texture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = texture.fsh; sourceTree = "<group>"; };
+		74046C651AD4AB4F00A2017A /* tilt_shift.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = tilt_shift.fsh; sourceTree = "<group>"; };
+		74046C661AD4AB4F00A2017A /* timedzoom.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = timedzoom.fsh; sourceTree = "<group>"; };
+		74046C671AD4AB4F00A2017A /* tint.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = tint.fsh; sourceTree = "<group>"; };
+		74046C681AD4AB4F00A2017A /* tone_curve_6.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = tone_curve_6.fsh; sourceTree = "<group>"; };
+		74046C691AD4AB4F00A2017A /* toone.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = toone.fsh; sourceTree = "<group>"; };
+		74046C6A1AD4AB4F00A2017A /* watermark.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = watermark.fsh; sourceTree = "<group>"; };
+		74046C6B1AD4AB4F00A2017A /* wave.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wave.fsh; sourceTree = "<group>"; };
+		74046C6D1AD4AB4F00A2017A /* aspect.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = aspect.vsh; sourceTree = "<group>"; };
+		74046C6E1AD4AB4F00A2017A /* aspect_rotation.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = aspect_rotation.vsh; sourceTree = "<group>"; };
+		74046C6F1AD4AB4F00A2017A /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blur.vsh; sourceTree = "<group>"; };
+		74046C701AD4AB4F00A2017A /* convolve.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = convolve.vsh; sourceTree = "<group>"; };
+		74046C711AD4AB4F00A2017A /* Convolve8RotFlip.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Convolve8RotFlip.vsh; sourceTree = "<group>"; };
+		74046C721AD4AB4F00A2017A /* offset.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = offset.vsh; sourceTree = "<group>"; };
+		74046C731AD4AB4F00A2017A /* rotation.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = rotation.vsh; sourceTree = "<group>"; };
+		74046C741AD4AB4F00A2017A /* rotation_left.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = rotation_left.vsh; sourceTree = "<group>"; };
+		74046C751AD4AB4F00A2017A /* rotation_right.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = rotation_right.vsh; sourceTree = "<group>"; };
+		74046C761AD4AB4F00A2017A /* simple.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.vsh; sourceTree = "<group>"; };
+		74046C771AD4AB4F00A2017A /* stretch.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = stretch.vsh; sourceTree = "<group>"; };
+		74046C781AD4AB4F00A2017A /* timedzoom.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = timedzoom.vsh; sourceTree = "<group>"; };
+		74046C791AD4AB4F00A2017A /* upsidedown.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = upsidedown.vsh; sourceTree = "<group>"; };
+		74046CDD1AD4AD5B00A2017A /* shaders.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = shaders.js; sourceTree = "<group>"; };
+		74046D3D1AD4AF9A00A2017A /* cartoon.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cartoon.vsscript; sourceTree = "<group>"; };
+		74046D3E1AD4AF9A00A2017A /* cartoon_hipass.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cartoon_hipass.vsscript; sourceTree = "<group>"; };
+		74046D3F1AD4AF9A00A2017A /* checker.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = checker.vsscript; sourceTree = "<group>"; };
+		74046D401AD4AF9A00A2017A /* colordots2.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colordots2.vsscript; sourceTree = "<group>"; };
+		74046D411AD4AF9A00A2017A /* coloroffset.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coloroffset.vsscript; sourceTree = "<group>"; };
+		74046D421AD4AF9A00A2017A /* colorsketch.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colorsketch.vsscript; sourceTree = "<group>"; };
+		74046D431AD4AF9A00A2017A /* colortracker.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colortracker.vsscript; sourceTree = "<group>"; };
+		74046D441AD4AF9A00A2017A /* delicious.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = delicious.vsscript; sourceTree = "<group>"; };
+		74046D451AD4AF9A00A2017A /* edgecanny.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = edgecanny.vsscript; sourceTree = "<group>"; };
+		74046D461AD4AF9A00A2017A /* edgehipass.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = edgehipass.vsscript; sourceTree = "<group>"; };
+		74046D471AD4AF9A00A2017A /* emboss.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emboss.vsscript; sourceTree = "<group>"; };
+		74046D481AD4AF9A00A2017A /* gradientmap.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gradientmap.vsscript; sourceTree = "<group>"; };
+		74046D491AD4AF9A00A2017A /* halftonegradient.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = halftonegradient.vsscript; sourceTree = "<group>"; };
+		74046D4A1AD4AF9A00A2017A /* hawaii.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hawaii.vsscript; sourceTree = "<group>"; };
+		74046D4B1AD4AF9A00A2017A /* hipass.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hipass.vsscript; sourceTree = "<group>"; };
+		74046D4C1AD4AF9A00A2017A /* matrix1.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix1.vsscript; sourceTree = "<group>"; };
+		74046D4D1AD4AF9A00A2017A /* matrix2.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix2.vsscript; sourceTree = "<group>"; };
+		74046D4E1AD4AF9A00A2017A /* monochrome.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = monochrome.vsscript; sourceTree = "<group>"; };
+		74046D4F1AD4AF9A00A2017A /* motionblur.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = motionblur.vsscript; sourceTree = "<group>"; };
+		74046D501AD4AF9A00A2017A /* motiondetector.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = motiondetector.vsscript; sourceTree = "<group>"; };
+		74046D511AD4AF9A00A2017A /* night.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = night.vsscript; sourceTree = "<group>"; };
+		74046D521AD4AF9A00A2017A /* pixelize.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pixelize.vsscript; sourceTree = "<group>"; };
+		74046D531AD4AF9A00A2017A /* popred.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = popred.vsscript; sourceTree = "<group>"; };
+		74046D541AD4AF9A00A2017A /* red.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = red.vsscript; sourceTree = "<group>"; };
+		74046D551AD4AF9A00A2017A /* saturate.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saturate.vsscript; sourceTree = "<group>"; };
+		74046D561AD4AF9A00A2017A /* sharpen.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sharpen.vsscript; sourceTree = "<group>"; };
+		74046D571AD4AF9A00A2017A /* shift.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shift.vsscript; sourceTree = "<group>"; };
+		74046D581AD4AF9A00A2017A /* sketch.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sketch.vsscript; sourceTree = "<group>"; };
+		74046D591AD4AF9A00A2017A /* skinny.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skinny.vsscript; sourceTree = "<group>"; };
+		74046D5A1AD4AF9A00A2017A /* smokedglass.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smokedglass.vsscript; sourceTree = "<group>"; };
+		74046D5B1AD4AF9A00A2017A /* smoothskin.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoothskin.vsscript; sourceTree = "<group>"; };
+		74046D5C1AD4AF9A00A2017A /* soundpicker.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = soundpicker.vsscript; sourceTree = "<group>"; };
+		74046D5D1AD4AF9A00A2017A /* stackoverflow.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stackoverflow.vsscript; sourceTree = "<group>"; };
+		74046D5E1AD4AF9A00A2017A /* stackunderflow.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stackunderflow.vsscript; sourceTree = "<group>"; };
+		74046D5F1AD4AF9A00A2017A /* taildark.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = taildark.vsscript; sourceTree = "<group>"; };
+		74046D601AD4AF9A00A2017A /* taillight.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = taillight.vsscript; sourceTree = "<group>"; };
+		74046D611AD4AF9A00A2017A /* tiltshift.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tiltshift.vsscript; sourceTree = "<group>"; };
+		74046D621AD4AF9A00A2017A /* tiltshift2.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tiltshift2.vsscript; sourceTree = "<group>"; };
+		74046D631AD4AF9A00A2017A /* toycamera.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = toycamera.vsscript; sourceTree = "<group>"; };
+		74046D641AD4AF9A00A2017A /* vintage.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vintage.vsscript; sourceTree = "<group>"; };
+		74046D651AD4AF9A00A2017A /* watercolor.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = watercolor.vsscript; sourceTree = "<group>"; };
+		74046D661AD4AF9A00A2017A /* whitevision.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whitevision.vsscript; sourceTree = "<group>"; };
+		74046D671AD4AF9A00A2017A /* xmas.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xmas.vsscript; sourceTree = "<group>"; };
+		74046D681AD4AF9A00A2017A /* xray.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xray.vsscript; sourceTree = "<group>"; };
+		74046D691AD4AF9A00A2017A /* xrays.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xrays.vsscript; sourceTree = "<group>"; };
+		74046D6A1AD4AF9A00A2017A /* yeswecan.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yeswecan.vsscript; sourceTree = "<group>"; };
+		74046D991AD4B01900A2017A /* bubbles.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bubbles.vsscript; sourceTree = "<group>"; };
+		74046D9B1AD4B05300A2017A /* enhancer.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enhancer.vsscript; sourceTree = "<group>"; };
+		74046D9D1AD4B05D00A2017A /* freeza.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = freeza.vsscript; sourceTree = "<group>"; };
+		74046D9F1AD4B06D00A2017A /* gradient.vsscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gradient.vsscript; sourceTree = "<group>"; };
+		74046DA41AD4B20200A2017A /* videoshader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "videoshader-Bridging-Header.h"; sourceTree = "<group>"; };
+		74046DA51AD4CAAF00A2017A /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
+		74046DA91AD4CE7700A2017A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		74046DAB1AD4CE7E00A2017A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		74046DAD1AD4DF5B00A2017A /* Lenna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lenna.png; sourceTree = "<group>"; };
+		74046DB61AD4EF2600A2017A /* SampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		74046DB81AD548FC00A2017A /* photo_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_normal@2x.png"; sourceTree = "<group>"; };
+		74046DBA1AD5497100A2017A /* Lenna256.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Lenna256.tiff; sourceTree = "<group>"; };
+		74E6321B1AD5E09D001F9B05 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		74E6321D1AD5E14B001F9B05 /* button_video_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_video_normal@2x.png"; sourceTree = "<group>"; };
+		74E6321E1AD5E14B001F9B05 /* button_video_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_video_pressed@2x.png"; sourceTree = "<group>"; };
+		74E632211AD5E17C001F9B05 /* icon_flip_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_flip_normal@2x.png"; sourceTree = "<group>"; };
+		74E632221AD5E17C001F9B05 /* icon_flip_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_flip_pressed@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74046BD91AD4AA6F00A2017A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74046BEE1AD4AA7000A2017A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74046BD31AD4AA6F00A2017A = {
+			isa = PBXGroup;
+			children = (
+				74046DAB1AD4CE7E00A2017A /* GLKit.framework */,
+				74046DA91AD4CE7700A2017A /* OpenGLES.framework */,
+				74046BDE1AD4AA6F00A2017A /* videoshader */,
+				74046BF41AD4AA7000A2017A /* videoshaderTests */,
+				74046BDD1AD4AA6F00A2017A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		74046BDD1AD4AA6F00A2017A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74046BDC1AD4AA6F00A2017A /* videoshader.app */,
+				74046BF11AD4AA7000A2017A /* videoshaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74046BDE1AD4AA6F00A2017A /* videoshader */ = {
+			isa = PBXGroup;
+			children = (
+				74046C011AD4AB4F00A2017A /* ovl */,
+				74046BE11AD4AA6F00A2017A /* AppDelegate.swift */,
+				74046BE31AD4AA6F00A2017A /* SampleViewController.swift */,
+				74046DB61AD4EF2600A2017A /* SampleViewController.xib */,
+				74E6321B1AD5E09D001F9B05 /* NotificationManager.swift */,
+				74E632251AD5E185001F9B05 /* images */,
+				74046DA51AD4CAAF00A2017A /* Application.xib */,
+				74046BE81AD4AA6F00A2017A /* Images.xcassets */,
+				74046BEA1AD4AA7000A2017A /* LaunchScreen.xib */,
+				74046BDF1AD4AA6F00A2017A /* Supporting Files */,
+			);
+			path = videoshader;
+			sourceTree = "<group>";
+		};
+		74046BDF1AD4AA6F00A2017A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74046BE01AD4AA6F00A2017A /* Info.plist */,
+				74046DA41AD4B20200A2017A /* videoshader-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74046BF41AD4AA7000A2017A /* videoshaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				74046BF71AD4AA7000A2017A /* videoshaderTests.swift */,
+				74046BF51AD4AA7000A2017A /* Supporting Files */,
+			);
+			path = videoshaderTests;
+			sourceTree = "<group>";
+		};
+		74046BF51AD4AA7000A2017A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74046BF61AD4AA7000A2017A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74046C011AD4AB4F00A2017A /* ovl */ = {
+			isa = PBXGroup;
+			children = (
+				74046DAD1AD4DF5B00A2017A /* Lenna.png */,
+				74046DB81AD548FC00A2017A /* photo_normal@2x.png */,
+				74046DBA1AD5497100A2017A /* Lenna256.tiff */,
+				74046CDD1AD4AD5B00A2017A /* shaders.js */,
+				74046D3C1AD4AF9A00A2017A /* vsscripts */,
+				74046C021AD4AB4F00A2017A /* classes */,
+				74046C271AD4AB4F00A2017A /* fragment_shaders */,
+				74046C6C1AD4AB4F00A2017A /* vertex_shaders */,
+			);
+			path = ovl;
+			sourceTree = SOURCE_ROOT;
+		};
+		74046C021AD4AB4F00A2017A /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				74046C031AD4AB4F00A2017A /* OVLBaseShader.h */,
+				74046C041AD4AB4F00A2017A /* OVLBaseShader.m */,
+				74046C051AD4AB4F00A2017A /* OVLBlender.h */,
+				74046C061AD4AB4F00A2017A /* OVLBlender.m */,
+				74046C071AD4AB4F00A2017A /* OVLBlurFilter.h */,
+				74046C081AD4AB4F00A2017A /* OVLBlurFilter.m */,
+				74046C091AD4AB4F00A2017A /* OVLFilter.h */,
+				74046C0A1AD4AB4F00A2017A /* OVLFilter.m */,
+				74046C0B1AD4AB4F00A2017A /* OVLFork.h */,
+				74046C0C1AD4AB4F00A2017A /* OVLFork.m */,
+				74046C0D1AD4AB4F00A2017A /* OVLMixer.h */,
+				74046C0E1AD4AB4F00A2017A /* OVLMixer.m */,
+				74046C0F1AD4AB4F00A2017A /* OVLNode.h */,
+				74046C101AD4AB4F00A2017A /* OVLNode.m */,
+				74046C111AD4AB4F00A2017A /* OVLOpenGLView.h */,
+				74046C121AD4AB4F00A2017A /* OVLOpenGLView.m */,
+				74046C131AD4AB4F00A2017A /* OVLPlaneShaders.h */,
+				74046C141AD4AB4F00A2017A /* OVLPlaneShaders.m */,
+				74046C151AD4AB4F00A2017A /* OVLPrev.h */,
+				74046C161AD4AB4F00A2017A /* OVLPrev.m */,
+				74046C171AD4AB4F00A2017A /* OVLScript.h */,
+				74046C181AD4AB4F00A2017A /* OVLScript.m */,
+				74046C191AD4AB4F00A2017A /* OVLShaderManager.h */,
+				74046C1A1AD4AB4F00A2017A /* OVLShaderManager.m */,
+				74046C1B1AD4AB4F00A2017A /* OVLShift.h */,
+				74046C1C1AD4AB4F00A2017A /* OVLShift.m */,
+				74046C1D1AD4AB4F00A2017A /* OVLSource.h */,
+				74046C1E1AD4AB4F00A2017A /* OVLSource.m */,
+				74046C1F1AD4AB4F00A2017A /* OVLSwap.h */,
+				74046C201AD4AB4F00A2017A /* OVLSwap.m */,
+				74046C211AD4AB4F00A2017A /* OVLTexture.h */,
+				74046C221AD4AB4F00A2017A /* OVLTexture.m */,
+				74046C231AD4AB4F00A2017A /* OVLTexturedFilter.h */,
+				74046C241AD4AB4F00A2017A /* OVLTexturedFilter.m */,
+				74046C251AD4AB4F00A2017A /* OVLViewController.h */,
+				74046C261AD4AB4F00A2017A /* OVLViewController.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		74046C271AD4AB4F00A2017A /* fragment_shaders */ = {
+			isa = PBXGroup;
+			children = (
+				74046C281AD4AB4F00A2017A /* alpha.fsh */,
+				74046C291AD4AB4F00A2017A /* alphamask.fsh */,
+				74046C2A1AD4AB4F00A2017A /* altalpha.fsh */,
+				74046C2B1AD4AB4F00A2017A /* altcolor.fsh */,
+				74046C2C1AD4AB4F00A2017A /* anti_alias.fsh */,
+				74046C2D1AD4AB4F00A2017A /* blur.fsh */,
+				74046C2E1AD4AB4F00A2017A /* boolean.fsh */,
+				74046C2F1AD4AB4F00A2017A /* boxblur.fsh */,
+				74046C301AD4AB4F00A2017A /* canny_edge.fsh */,
+				74046C311AD4AB4F00A2017A /* checker.fsh */,
+				74046C321AD4AB4F00A2017A /* circle.fsh */,
+				74046C331AD4AB4F00A2017A /* color.fsh */,
+				74046C341AD4AB4F00A2017A /* colorblend.fsh */,
+				74046C351AD4AB4F00A2017A /* colorburn.fsh */,
+				74046C361AD4AB4F00A2017A /* colordodge.fsh */,
+				74046C371AD4AB4F00A2017A /* colortracker.fsh */,
+				74046C381AD4AB4F00A2017A /* contrast.fsh */,
+				74046C391AD4AB4F00A2017A /* copy.fsh */,
+				74046C3A1AD4AB4F00A2017A /* darken.fsh */,
+				74046C3B1AD4AB4F00A2017A /* delta.fsh */,
+				74046C3C1AD4AB4F00A2017A /* difference.fsh */,
+				74046C3D1AD4AB4F00A2017A /* differentiate.fsh */,
+				74046C3E1AD4AB4F00A2017A /* embold.fsh */,
+				74046C3F1AD4AB4F00A2017A /* emboss.fsh */,
+				74046C401AD4AB4F00A2017A /* enhancer.fsh */,
+				74046C411AD4AB4F00A2017A /* exclusion.fsh */,
+				74046C421AD4AB4F00A2017A /* gaussianblur.fsh */,
+				74046C431AD4AB4F00A2017A /* gradient.fsh */,
+				74046C441AD4AB4F00A2017A /* gradientmap.fsh */,
+				74046C451AD4AB4F00A2017A /* halftone.fsh */,
+				74046C461AD4AB4F00A2017A /* hardlight.fsh */,
+				74046C471AD4AB4F00A2017A /* hue.fsh */,
+				74046C481AD4AB4F00A2017A /* hue_filter.fsh */,
+				74046C491AD4AB4F00A2017A /* hueshift.fsh */,
+				74046C4A1AD4AB4F00A2017A /* invert.fsh */,
+				74046C4B1AD4AB4F00A2017A /* invertalpha.fsh */,
+				74046C4C1AD4AB4F00A2017A /* lighten.fsh */,
+				74046C4D1AD4AB4F00A2017A /* lighter.fsh */,
+				74046C4E1AD4AB4F00A2017A /* loudness.fsh */,
+				74046C4F1AD4AB4F00A2017A /* luminosity.fsh */,
+				74046C501AD4AB4F00A2017A /* max_blur.fsh */,
+				74046C511AD4AB4F00A2017A /* max_blur_cross.fsh */,
+				74046C521AD4AB4F00A2017A /* mirror.fsh */,
+				74046C531AD4AB4F00A2017A /* mixer.fsh */,
+				74046C541AD4AB4F00A2017A /* mono.fsh */,
+				74046C551AD4AB4F00A2017A /* multiply.fsh */,
+				74046C561AD4AB4F00A2017A /* offset.fsh */,
+				74046C571AD4AB4F00A2017A /* overlay.fsh */,
+				74046C581AD4AB4F00A2017A /* rainbow.fsh */,
+				74046C591AD4AB4F00A2017A /* rotation.fsh */,
+				74046C5A1AD4AB4F00A2017A /* saturate.fsh */,
+				74046C5B1AD4AB4F00A2017A /* saturation.fsh */,
+				74046C5C1AD4AB4F00A2017A /* screen.fsh */,
+				74046C5D1AD4AB4F00A2017A /* simple.fsh */,
+				74046C5E1AD4AB4F00A2017A /* simple_cutoff.fsh */,
+				74046C5F1AD4AB4F00A2017A /* slice.fsh */,
+				74046C601AD4AB4F00A2017A /* sobel.fsh */,
+				74046C611AD4AB4F00A2017A /* softlight.fsh */,
+				74046C621AD4AB4F00A2017A /* stretch.fsh */,
+				74046C631AD4AB4F00A2017A /* superimpose.fsh */,
+				74046C641AD4AB4F00A2017A /* texture.fsh */,
+				74046C651AD4AB4F00A2017A /* tilt_shift.fsh */,
+				74046C661AD4AB4F00A2017A /* timedzoom.fsh */,
+				74046C671AD4AB4F00A2017A /* tint.fsh */,
+				74046C681AD4AB4F00A2017A /* tone_curve_6.fsh */,
+				74046C691AD4AB4F00A2017A /* toone.fsh */,
+				74046C6A1AD4AB4F00A2017A /* watermark.fsh */,
+				74046C6B1AD4AB4F00A2017A /* wave.fsh */,
+			);
+			path = fragment_shaders;
+			sourceTree = "<group>";
+		};
+		74046C6C1AD4AB4F00A2017A /* vertex_shaders */ = {
+			isa = PBXGroup;
+			children = (
+				74046C6D1AD4AB4F00A2017A /* aspect.vsh */,
+				74046C6E1AD4AB4F00A2017A /* aspect_rotation.vsh */,
+				74046C6F1AD4AB4F00A2017A /* blur.vsh */,
+				74046C701AD4AB4F00A2017A /* convolve.vsh */,
+				74046C711AD4AB4F00A2017A /* Convolve8RotFlip.vsh */,
+				74046C721AD4AB4F00A2017A /* offset.vsh */,
+				74046C731AD4AB4F00A2017A /* rotation.vsh */,
+				74046C741AD4AB4F00A2017A /* rotation_left.vsh */,
+				74046C751AD4AB4F00A2017A /* rotation_right.vsh */,
+				74046C761AD4AB4F00A2017A /* simple.vsh */,
+				74046C771AD4AB4F00A2017A /* stretch.vsh */,
+				74046C781AD4AB4F00A2017A /* timedzoom.vsh */,
+				74046C791AD4AB4F00A2017A /* upsidedown.vsh */,
+			);
+			path = vertex_shaders;
+			sourceTree = "<group>";
+		};
+		74046D3C1AD4AF9A00A2017A /* vsscripts */ = {
+			isa = PBXGroup;
+			children = (
+				74046D991AD4B01900A2017A /* bubbles.vsscript */,
+				74046D3E1AD4AF9A00A2017A /* cartoon_hipass.vsscript */,
+				74046D3D1AD4AF9A00A2017A /* cartoon.vsscript */,
+				74046D3F1AD4AF9A00A2017A /* checker.vsscript */,
+				74046D401AD4AF9A00A2017A /* colordots2.vsscript */,
+				74046D411AD4AF9A00A2017A /* coloroffset.vsscript */,
+				74046D421AD4AF9A00A2017A /* colorsketch.vsscript */,
+				74046D431AD4AF9A00A2017A /* colortracker.vsscript */,
+				74046D441AD4AF9A00A2017A /* delicious.vsscript */,
+				74046D451AD4AF9A00A2017A /* edgecanny.vsscript */,
+				74046D461AD4AF9A00A2017A /* edgehipass.vsscript */,
+				74046D471AD4AF9A00A2017A /* emboss.vsscript */,
+				74046D9B1AD4B05300A2017A /* enhancer.vsscript */,
+				74046D9D1AD4B05D00A2017A /* freeza.vsscript */,
+				74046D9F1AD4B06D00A2017A /* gradient.vsscript */,
+				74046D481AD4AF9A00A2017A /* gradientmap.vsscript */,
+				74046D491AD4AF9A00A2017A /* halftonegradient.vsscript */,
+				74046D4A1AD4AF9A00A2017A /* hawaii.vsscript */,
+				74046D4B1AD4AF9A00A2017A /* hipass.vsscript */,
+				74046D4C1AD4AF9A00A2017A /* matrix1.vsscript */,
+				74046D4D1AD4AF9A00A2017A /* matrix2.vsscript */,
+				74046D4E1AD4AF9A00A2017A /* monochrome.vsscript */,
+				74046D4F1AD4AF9A00A2017A /* motionblur.vsscript */,
+				74046D501AD4AF9A00A2017A /* motiondetector.vsscript */,
+				74046D511AD4AF9A00A2017A /* night.vsscript */,
+				74046D521AD4AF9A00A2017A /* pixelize.vsscript */,
+				74046D531AD4AF9A00A2017A /* popred.vsscript */,
+				74046D541AD4AF9A00A2017A /* red.vsscript */,
+				74046D551AD4AF9A00A2017A /* saturate.vsscript */,
+				74046D561AD4AF9A00A2017A /* sharpen.vsscript */,
+				74046D571AD4AF9A00A2017A /* shift.vsscript */,
+				74046D581AD4AF9A00A2017A /* sketch.vsscript */,
+				74046D591AD4AF9A00A2017A /* skinny.vsscript */,
+				74046D5A1AD4AF9A00A2017A /* smokedglass.vsscript */,
+				74046D5B1AD4AF9A00A2017A /* smoothskin.vsscript */,
+				74046D5C1AD4AF9A00A2017A /* soundpicker.vsscript */,
+				74046D5D1AD4AF9A00A2017A /* stackoverflow.vsscript */,
+				74046D5E1AD4AF9A00A2017A /* stackunderflow.vsscript */,
+				74046D5F1AD4AF9A00A2017A /* taildark.vsscript */,
+				74046D601AD4AF9A00A2017A /* taillight.vsscript */,
+				74046D611AD4AF9A00A2017A /* tiltshift.vsscript */,
+				74046D621AD4AF9A00A2017A /* tiltshift2.vsscript */,
+				74046D631AD4AF9A00A2017A /* toycamera.vsscript */,
+				74046D641AD4AF9A00A2017A /* vintage.vsscript */,
+				74046D651AD4AF9A00A2017A /* watercolor.vsscript */,
+				74046D661AD4AF9A00A2017A /* whitevision.vsscript */,
+				74046D671AD4AF9A00A2017A /* xmas.vsscript */,
+				74046D681AD4AF9A00A2017A /* xray.vsscript */,
+				74046D691AD4AF9A00A2017A /* xrays.vsscript */,
+				74046D6A1AD4AF9A00A2017A /* yeswecan.vsscript */,
+			);
+			path = vsscripts;
+			sourceTree = "<group>";
+		};
+		74E632251AD5E185001F9B05 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				74E6321D1AD5E14B001F9B05 /* button_video_normal@2x.png */,
+				74E6321E1AD5E14B001F9B05 /* button_video_pressed@2x.png */,
+				74E632211AD5E17C001F9B05 /* icon_flip_normal@2x.png */,
+				74E632221AD5E17C001F9B05 /* icon_flip_pressed@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74046BDB1AD4AA6F00A2017A /* videoshader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74046BFB1AD4AA7000A2017A /* Build configuration list for PBXNativeTarget "videoshader" */;
+			buildPhases = (
+				74046BD81AD4AA6F00A2017A /* Sources */,
+				74046BD91AD4AA6F00A2017A /* Frameworks */,
+				74046BDA1AD4AA6F00A2017A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = videoshader;
+			productName = videoshader;
+			productReference = 74046BDC1AD4AA6F00A2017A /* videoshader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74046BF01AD4AA7000A2017A /* videoshaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74046BFE1AD4AA7000A2017A /* Build configuration list for PBXNativeTarget "videoshaderTests" */;
+			buildPhases = (
+				74046BED1AD4AA7000A2017A /* Sources */,
+				74046BEE1AD4AA7000A2017A /* Frameworks */,
+				74046BEF1AD4AA7000A2017A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74046BF31AD4AA7000A2017A /* PBXTargetDependency */,
+			);
+			name = videoshaderTests;
+			productName = videoshaderTests;
+			productReference = 74046BF11AD4AA7000A2017A /* videoshaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74046BD41AD4AA6F00A2017A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = satoshi;
+				TargetAttributes = {
+					74046BDB1AD4AA6F00A2017A = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					74046BF01AD4AA7000A2017A = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 74046BDB1AD4AA6F00A2017A;
+					};
+				};
+			};
+			buildConfigurationList = 74046BD71AD4AA6F00A2017A /* Build configuration list for PBXProject "videoshader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74046BD31AD4AA6F00A2017A;
+			productRefGroup = 74046BDD1AD4AA6F00A2017A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74046BDB1AD4AA6F00A2017A /* videoshader */,
+				74046BF01AD4AA7000A2017A /* videoshaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74046BDA1AD4AA6F00A2017A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74046CA01AD4AB4F00A2017A /* difference.fsh in Resources */,
+				74046D7A1AD4AF9A00A2017A /* matrix1.vsscript in Resources */,
+				74046CC41AD4AB4F00A2017A /* sobel.fsh in Resources */,
+				74046CCD1AD4AB4F00A2017A /* toone.fsh in Resources */,
+				74046D761AD4AF9A00A2017A /* gradientmap.vsscript in Resources */,
+				74046C971AD4AB4F00A2017A /* color.fsh in Resources */,
+				74046D6F1AD4AF9A00A2017A /* coloroffset.vsscript in Resources */,
+				74046CBF1AD4AB4F00A2017A /* saturation.fsh in Resources */,
+				74046C9D1AD4AB4F00A2017A /* copy.fsh in Resources */,
+				74046CA91AD4AB4F00A2017A /* halftone.fsh in Resources */,
+				74046D981AD4AF9A00A2017A /* yeswecan.vsscript in Resources */,
+				74046D891AD4AF9A00A2017A /* smoothskin.vsscript in Resources */,
+				74046CBC1AD4AB4F00A2017A /* rainbow.fsh in Resources */,
+				74046CA71AD4AB4F00A2017A /* gradient.fsh in Resources */,
+				74046CB11AD4AB4F00A2017A /* lighter.fsh in Resources */,
+				74E632241AD5E17C001F9B05 /* icon_flip_pressed@2x.png in Resources */,
+				74046DB71AD4EF2600A2017A /* SampleViewController.xib in Resources */,
+				74046D811AD4AF9A00A2017A /* popred.vsscript in Resources */,
+				74046D831AD4AF9A00A2017A /* saturate.vsscript in Resources */,
+				74046D771AD4AF9A00A2017A /* halftonegradient.vsscript in Resources */,
+				74046D701AD4AF9A00A2017A /* colorsketch.vsscript in Resources */,
+				74046C981AD4AB4F00A2017A /* colorblend.fsh in Resources */,
+				74046D8C1AD4AF9A00A2017A /* stackunderflow.vsscript in Resources */,
+				74046CD11AD4AB4F00A2017A /* aspect_rotation.vsh in Resources */,
+				74046D6E1AD4AF9A00A2017A /* colordots2.vsscript in Resources */,
+				74046CC71AD4AB4F00A2017A /* superimpose.fsh in Resources */,
+				74046CC81AD4AB4F00A2017A /* texture.fsh in Resources */,
+				74046CC91AD4AB4F00A2017A /* tilt_shift.fsh in Resources */,
+				74046C921AD4AB4F00A2017A /* boolean.fsh in Resources */,
+				74046CCB1AD4AB4F00A2017A /* tint.fsh in Resources */,
+				74E6321F1AD5E14B001F9B05 /* button_video_normal@2x.png in Resources */,
+				74046D931AD4AF9A00A2017A /* watercolor.vsscript in Resources */,
+				74046D741AD4AF9A00A2017A /* edgehipass.vsscript in Resources */,
+				74046D971AD4AF9A00A2017A /* xrays.vsscript in Resources */,
+				74046D6C1AD4AF9A00A2017A /* cartoon_hipass.vsscript in Resources */,
+				74046CD71AD4AB4F00A2017A /* rotation_left.vsh in Resources */,
+				74046C9A1AD4AB4F00A2017A /* colordodge.fsh in Resources */,
+				74046CBB1AD4AB4F00A2017A /* overlay.fsh in Resources */,
+				74046CC61AD4AB4F00A2017A /* stretch.fsh in Resources */,
+				74046C951AD4AB4F00A2017A /* checker.fsh in Resources */,
+				74046DA01AD4B06D00A2017A /* gradient.vsscript in Resources */,
+				74046CCA1AD4AB4F00A2017A /* timedzoom.fsh in Resources */,
+				74046CA31AD4AB4F00A2017A /* emboss.fsh in Resources */,
+				74046D6B1AD4AF9A00A2017A /* cartoon.vsscript in Resources */,
+				74046CD51AD4AB4F00A2017A /* offset.vsh in Resources */,
+				74046CDA1AD4AB4F00A2017A /* stretch.vsh in Resources */,
+				74046C8F1AD4AB4F00A2017A /* altcolor.fsh in Resources */,
+				74046D9C1AD4B05300A2017A /* enhancer.vsscript in Resources */,
+				74046CA81AD4AB4F00A2017A /* gradientmap.fsh in Resources */,
+				74046D871AD4AF9A00A2017A /* skinny.vsscript in Resources */,
+				74046CA61AD4AB4F00A2017A /* gaussianblur.fsh in Resources */,
+				74046CC31AD4AB4F00A2017A /* slice.fsh in Resources */,
+				74046D751AD4AF9A00A2017A /* emboss.vsscript in Resources */,
+				74046CCF1AD4AB4F00A2017A /* wave.fsh in Resources */,
+				74046D801AD4AF9A00A2017A /* pixelize.vsscript in Resources */,
+				74046DBB1AD5497100A2017A /* Lenna256.tiff in Resources */,
+				74046D8E1AD4AF9A00A2017A /* taillight.vsscript in Resources */,
+				74046CC11AD4AB4F00A2017A /* simple.fsh in Resources */,
+				74046D901AD4AF9A00A2017A /* tiltshift2.vsscript in Resources */,
+				74046D7C1AD4AF9A00A2017A /* monochrome.vsscript in Resources */,
+				74046D821AD4AF9A00A2017A /* red.vsscript in Resources */,
+				74046D8A1AD4AF9A00A2017A /* soundpicker.vsscript in Resources */,
+				74046CB71AD4AB4F00A2017A /* mixer.fsh in Resources */,
+				74046CB81AD4AB4F00A2017A /* mono.fsh in Resources */,
+				74046D7B1AD4AF9A00A2017A /* matrix2.vsscript in Resources */,
+				74046CA11AD4AB4F00A2017A /* differentiate.fsh in Resources */,
+				74046C901AD4AB4F00A2017A /* anti_alias.fsh in Resources */,
+				74046D911AD4AF9A00A2017A /* toycamera.vsscript in Resources */,
+				74046D9A1AD4B01900A2017A /* bubbles.vsscript in Resources */,
+				74046BEC1AD4AA7000A2017A /* LaunchScreen.xib in Resources */,
+				74046CDB1AD4AB4F00A2017A /* timedzoom.vsh in Resources */,
+				74046D6D1AD4AF9A00A2017A /* checker.vsscript in Resources */,
+				74046CD41AD4AB4F00A2017A /* Convolve8RotFlip.vsh in Resources */,
+				74046C8E1AD4AB4F00A2017A /* altalpha.fsh in Resources */,
+				74046C8C1AD4AB4F00A2017A /* alpha.fsh in Resources */,
+				74046CC21AD4AB4F00A2017A /* simple_cutoff.fsh in Resources */,
+				74046CC01AD4AB4F00A2017A /* screen.fsh in Resources */,
+				74046CAB1AD4AB4F00A2017A /* hue.fsh in Resources */,
+				74046CAC1AD4AB4F00A2017A /* hue_filter.fsh in Resources */,
+				74E632201AD5E14B001F9B05 /* button_video_pressed@2x.png in Resources */,
+				74046CA41AD4AB4F00A2017A /* enhancer.fsh in Resources */,
+				74046CD21AD4AB4F00A2017A /* blur.vsh in Resources */,
+				74046BE91AD4AA6F00A2017A /* Images.xcassets in Resources */,
+				74046CBE1AD4AB4F00A2017A /* saturate.fsh in Resources */,
+				74046CB91AD4AB4F00A2017A /* multiply.fsh in Resources */,
+				74046D8F1AD4AF9A00A2017A /* tiltshift.vsscript in Resources */,
+				74046CAE1AD4AB4F00A2017A /* invert.fsh in Resources */,
+				74046D731AD4AF9A00A2017A /* edgecanny.vsscript in Resources */,
+				74046D7D1AD4AF9A00A2017A /* motionblur.vsscript in Resources */,
+				74046CAA1AD4AB4F00A2017A /* hardlight.fsh in Resources */,
+				74046D851AD4AF9A00A2017A /* shift.vsscript in Resources */,
+				74046CB61AD4AB4F00A2017A /* mirror.fsh in Resources */,
+				74046CB51AD4AB4F00A2017A /* max_blur_cross.fsh in Resources */,
+				74046D881AD4AF9A00A2017A /* smokedglass.vsscript in Resources */,
+				74046CDC1AD4AB4F00A2017A /* upsidedown.vsh in Resources */,
+				74046DAE1AD4DF5B00A2017A /* Lenna.png in Resources */,
+				74046C991AD4AB4F00A2017A /* colorburn.fsh in Resources */,
+				74046CD01AD4AB4F00A2017A /* aspect.vsh in Resources */,
+				74046D841AD4AF9A00A2017A /* sharpen.vsscript in Resources */,
+				74046C911AD4AB4F00A2017A /* blur.fsh in Resources */,
+				74046CAF1AD4AB4F00A2017A /* invertalpha.fsh in Resources */,
+				74046C9B1AD4AB4F00A2017A /* colortracker.fsh in Resources */,
+				74046CB21AD4AB4F00A2017A /* loudness.fsh in Resources */,
+				74046CA21AD4AB4F00A2017A /* embold.fsh in Resources */,
+				74E632231AD5E17C001F9B05 /* icon_flip_normal@2x.png in Resources */,
+				74046D8D1AD4AF9A00A2017A /* taildark.vsscript in Resources */,
+				74046CB31AD4AB4F00A2017A /* luminosity.fsh in Resources */,
+				74046D921AD4AF9A00A2017A /* vintage.vsscript in Resources */,
+				74046CBD1AD4AB4F00A2017A /* rotation.fsh in Resources */,
+				74046D7E1AD4AF9A00A2017A /* motiondetector.vsscript in Resources */,
+				74046C931AD4AB4F00A2017A /* boxblur.fsh in Resources */,
+				74046D711AD4AF9A00A2017A /* colortracker.vsscript in Resources */,
+				74046C961AD4AB4F00A2017A /* circle.fsh in Resources */,
+				74046DB91AD548FC00A2017A /* photo_normal@2x.png in Resources */,
+				74046C9C1AD4AB4F00A2017A /* contrast.fsh in Resources */,
+				74046C941AD4AB4F00A2017A /* canny_edge.fsh in Resources */,
+				74046D8B1AD4AF9A00A2017A /* stackoverflow.vsscript in Resources */,
+				74046D7F1AD4AF9A00A2017A /* night.vsscript in Resources */,
+				74046CB41AD4AB4F00A2017A /* max_blur.fsh in Resources */,
+				74046C9F1AD4AB4F00A2017A /* delta.fsh in Resources */,
+				74046CBA1AD4AB4F00A2017A /* offset.fsh in Resources */,
+				74046D781AD4AF9A00A2017A /* hawaii.vsscript in Resources */,
+				74046CC51AD4AB4F00A2017A /* softlight.fsh in Resources */,
+				74046DA61AD4CAAF00A2017A /* Application.xib in Resources */,
+				74046CD91AD4AB4F00A2017A /* simple.vsh in Resources */,
+				74046D791AD4AF9A00A2017A /* hipass.vsscript in Resources */,
+				74046CAD1AD4AB4F00A2017A /* hueshift.fsh in Resources */,
+				74046D951AD4AF9A00A2017A /* xmas.vsscript in Resources */,
+				74046D861AD4AF9A00A2017A /* sketch.vsscript in Resources */,
+				74046D9E1AD4B05D00A2017A /* freeza.vsscript in Resources */,
+				74046CA51AD4AB4F00A2017A /* exclusion.fsh in Resources */,
+				74046CB01AD4AB4F00A2017A /* lighten.fsh in Resources */,
+				74046CCE1AD4AB4F00A2017A /* watermark.fsh in Resources */,
+				74046CD61AD4AB4F00A2017A /* rotation.vsh in Resources */,
+				74046D941AD4AF9A00A2017A /* whitevision.vsscript in Resources */,
+				74046C9E1AD4AB4F00A2017A /* darken.fsh in Resources */,
+				74046CDE1AD4AD5B00A2017A /* shaders.js in Resources */,
+				74046CCC1AD4AB4F00A2017A /* tone_curve_6.fsh in Resources */,
+				74046D721AD4AF9A00A2017A /* delicious.vsscript in Resources */,
+				74046C8D1AD4AB4F00A2017A /* alphamask.fsh in Resources */,
+				74046D961AD4AF9A00A2017A /* xray.vsscript in Resources */,
+				74046CD81AD4AB4F00A2017A /* rotation_right.vsh in Resources */,
+				74046CD31AD4AB4F00A2017A /* convolve.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74046BEF1AD4AA7000A2017A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74046BD81AD4AA6F00A2017A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74046C841AD4AB4F00A2017A /* OVLScript.m in Sources */,
+				74046C7B1AD4AB4F00A2017A /* OVLBlender.m in Sources */,
+				74046BE41AD4AA6F00A2017A /* SampleViewController.swift in Sources */,
+				74046C7A1AD4AB4F00A2017A /* OVLBaseShader.m in Sources */,
+				74046C801AD4AB4F00A2017A /* OVLNode.m in Sources */,
+				74046C7F1AD4AB4F00A2017A /* OVLMixer.m in Sources */,
+				74046C861AD4AB4F00A2017A /* OVLShift.m in Sources */,
+				74046C811AD4AB4F00A2017A /* OVLOpenGLView.m in Sources */,
+				74046C871AD4AB4F00A2017A /* OVLSource.m in Sources */,
+				74046C831AD4AB4F00A2017A /* OVLPrev.m in Sources */,
+				74046C8B1AD4AB4F00A2017A /* OVLViewController.m in Sources */,
+				74046C7E1AD4AB4F00A2017A /* OVLFork.m in Sources */,
+				74046C891AD4AB4F00A2017A /* OVLTexture.m in Sources */,
+				74046C7D1AD4AB4F00A2017A /* OVLFilter.m in Sources */,
+				74046C8A1AD4AB4F00A2017A /* OVLTexturedFilter.m in Sources */,
+				74046C821AD4AB4F00A2017A /* OVLPlaneShaders.m in Sources */,
+				74046BE21AD4AA6F00A2017A /* AppDelegate.swift in Sources */,
+				74046C851AD4AB4F00A2017A /* OVLShaderManager.m in Sources */,
+				74E6321C1AD5E09D001F9B05 /* NotificationManager.swift in Sources */,
+				74046C7C1AD4AB4F00A2017A /* OVLBlurFilter.m in Sources */,
+				74046C881AD4AB4F00A2017A /* OVLSwap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74046BED1AD4AA7000A2017A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74046BF81AD4AA7000A2017A /* videoshaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74046BF31AD4AA7000A2017A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74046BDB1AD4AA6F00A2017A /* videoshader */;
+			targetProxy = 74046BF21AD4AA7000A2017A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74046BEA1AD4AA7000A2017A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74046BEB1AD4AA7000A2017A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74046BF91AD4AA7000A2017A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74046BFA1AD4AA7000A2017A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74046BFC1AD4AA7000A2017A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = videoshader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "videoshader/videoshader-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		74046BFD1AD4AA7000A2017A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = videoshader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "videoshader/videoshader-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		74046BFF1AD4AA7000A2017A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = videoshaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/videoshader.app/videoshader";
+			};
+			name = Debug;
+		};
+		74046C001AD4AA7000A2017A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = videoshaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/videoshader.app/videoshader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74046BD71AD4AA6F00A2017A /* Build configuration list for PBXProject "videoshader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74046BF91AD4AA7000A2017A /* Debug */,
+				74046BFA1AD4AA7000A2017A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74046BFB1AD4AA7000A2017A /* Build configuration list for PBXNativeTarget "videoshader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74046BFC1AD4AA7000A2017A /* Debug */,
+				74046BFD1AD4AA7000A2017A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74046BFE1AD4AA7000A2017A /* Build configuration list for PBXNativeTarget "videoshaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74046BFF1AD4AA7000A2017A /* Debug */,
+				74046C001AD4AA7000A2017A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74046BD41AD4AA6F00A2017A /* Project object */;
+}

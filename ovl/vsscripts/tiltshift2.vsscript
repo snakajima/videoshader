@@ -1,0 +1,7 @@
+{
+    "title":"Tilt Shift",
+    "pipeline":[
+        { "filter":"tilt_shift", "repeat":8, "attr": { "power": 10.0 } },
+        { "filter":"saturate", "attr":{ "ratio":0.5 } },
+    ]
+}

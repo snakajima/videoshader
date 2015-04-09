@@ -1,0 +1,10 @@
+{
+    "title":"Vintage",
+    "pipeline":[
+        { "filter":"contrast" },
+        { "filter":"mono", "ui":{ "hidden":["weight"], "primary":["color"] },
+          "attr":{ "color":[1.0, 0.68, 0.23, 1.0] } },
+        { "source":"circle", "attr":{ "color2":[0.1, 0.07, 0.0, 1.00], "radius":1.9 } },
+        { "blender":"alpha" },
+    ]
+}

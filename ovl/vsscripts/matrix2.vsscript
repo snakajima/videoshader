@@ -1,0 +1,141 @@
+{
+  "title" : "MATRIX 2",
+  "pipeline" : [
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 2
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "fork"
+    },
+    {
+      "filter" : "boxblur",
+      "attr" : {
+        "radius" : 6.6
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "toone",
+      "attr" : {
+        "levels" : 4,
+        "weight" : [
+          0.299,
+          0.587,
+          0.114
+        ]
+      },
+      "ui" : {
+        "hidden" : [
+          "weight"
+        ]
+      }
+    },
+    {
+      "filter" : "saturate",
+      "attr" : {
+        "ratio" : 0.9611111,
+        "weight" : [
+          0.9611111,
+          1,
+          1
+        ]
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "control" : "swap"
+    },
+    {
+      "filter" : "sobel",
+      "attr" : {
+        "weight" : 3.188889
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "canny_edge",
+      "attr" : {
+        "color" : [
+          0.7472221999999999,
+          0.6972222,
+          0.7472221999999999,
+          1
+        ],
+        "thin" : 0.9083334,
+        "threshold" : 0.07777778
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "filter" : "anti_alias",
+      "attr" : {
+
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "ui" : {
+
+      },
+      "attr" : {
+        "wave" : 30,
+        "center" : [
+          10,
+          0.5
+        ],
+        "speed" : 3.833333,
+        "color1" : [
+          0,
+          0.5305555,
+          0,
+          1
+        ],
+        "color2" : [
+          0,
+          1,
+          0,
+          1
+        ],
+        "scale" : [
+          1,
+          1
+        ]
+      },
+      "source" : "wave"
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    },
+    {
+      "blender" : "alpha",
+      "attr" : {
+        "ratio" : 1
+      },
+      "ui" : {
+
+      }
+    }
+  ]
+}

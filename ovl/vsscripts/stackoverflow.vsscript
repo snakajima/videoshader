@@ -1,0 +1,19 @@
+{
+    "title":"Stack Overflow",
+    "pipeline":[
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+        { "control":"fork" },
+        { "filter":"mono" },
+    ]
+}
