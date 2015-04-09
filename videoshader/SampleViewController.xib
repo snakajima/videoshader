@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SampleViewController" customModule="videoshader" customModuleProvider="target">
             <connections>
+                <outlet property="btnFlip" destination="br3-xr-Uxj" id="hEY-VH-wiK"/>
                 <outlet property="btnRecord" destination="oIf-c0-BxG" id="pUn-uz-P3a"/>
                 <outlet property="labelTime" destination="Db9-Il-ata" id="bRs-Qv-ThG"/>
                 <outlet property="ovc" destination="zQw-Pl-tkZ" id="1Ga-ul-nPv"/>
@@ -60,6 +61,9 @@
                     <state key="normal" image="icon_flip_normal.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="flip:" destination="-1" eventType="touchUpInside" id="MN6-JR-kPZ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

@@ -12,12 +12,14 @@ class SampleViewController: UIViewController {
     @IBOutlet var ovc : OVLViewController!
     @IBOutlet var labelTime : UILabel!
     @IBOutlet var btnRecord : UIButton!
+    @IBOutlet var btnFlip : UIButton!
     
     let notifications = NotificationManager()
     let shaderManager = OVLShaderManager.sharedInstance() as OVLShaderManager
     let scriptNames = ["cartoon", "hawaii", "freeza", "matrix1",
                        "pixelize", "motionblur", "red", "gradientmap",
                        "colorsketch", "delicious", "emboss"]
+    var fFrontCamera = false
     lazy var scripts:[OVLScript] = {
         var scripts = [OVLScript]()
         for name in self.scriptNames {
@@ -44,7 +46,7 @@ class SampleViewController: UIViewController {
         OVLFilter.setFrontCameraMode(true)
         self.ovc.fHD = true
         self.ovc.fps = 30
-        self.ovc.fFrontCamera = true
+        self.ovc.fFrontCamera = fFrontCamera
         self.ovc.fPhotoRatio = false
 
         // Load the script after associated view controllers are fully initialized
@@ -69,7 +71,6 @@ class SampleViewController: UIViewController {
     }
     
     @IBAction func swiped(sender:UISwipeGestureRecognizer) {
-        NSLog("swiped \(sender.direction)")
         if (sender.direction == UISwipeGestureRecognizerDirection.Right) {
             index = (index + 1) % scripts.count
         } else {
@@ -82,6 +83,14 @@ class SampleViewController: UIViewController {
         let image = UIImage(named: ovc.fRecording ? "button_video_pressed" : "button_video_normal")
         btnRecord.setImage(image, forState: UIControlState.Normal)
         labelTime.text = ""
+        btnFlip.enabled = !ovc.fRecording
+    }
+    
+    @IBAction func flip(sender:UIButton) {
+        NSLog("flipped")
+        fFrontCamera = !fFrontCamera
+        OVLFilter.setFrontCameraMode(fFrontCamera)
+        self.ovc.updateCameraPosition(fFrontCamera)
     }
 }
 
