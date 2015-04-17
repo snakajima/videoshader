@@ -13,13 +13,13 @@ class SampleViewController: UIViewController {
     @IBOutlet var labelTime : UILabel!
     @IBOutlet var btnRecord : UIButton!
     @IBOutlet var btnFlip : UIButton!
-    
+
+    // Static members
     let notifications = NotificationManager()
     let shaderManager = OVLShaderManager.sharedInstance() as! OVLShaderManager
     let scriptNames = ["cartoon", "hawaii", "freeza", "matrix1",
                        "pixelize", "motionblur", "red", "gradientmap",
                        "colorsketch", "delicious", "emboss"]
-    var fFrontCamera = false
     lazy var scripts:[OVLScript] = {
         var scripts = [OVLScript]()
         for name in self.scriptNames {
@@ -31,6 +31,9 @@ class SampleViewController: UIViewController {
         }
         return scripts
     }()
+
+    // Variables members
+    var fFrontCamera = false
     var index:Int = 0 {
         didSet {
             self.ovc.switchScript(scripts[index])
