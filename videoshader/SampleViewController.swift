@@ -9,8 +9,20 @@
 import UIKit
 
 class SampleViewController: UIViewController {
-    @IBOutlet var ovc : OVLViewController!
-    @IBOutlet var labelTime : UILabel!
+    @IBOutlet var ovc : OVLViewController! {
+        didSet {
+            OVLFilter.setFrontCameraMode(true)
+            ovc.fHD = true
+            ovc.fps = 30
+            ovc.fFrontCamera = fFrontCamera
+            ovc.fPhotoRatio = false
+        }
+    }
+    @IBOutlet var labelTime : UILabel! {
+        didSet {
+            labelTime.text = ""
+        }
+    }
     @IBOutlet var btnRecord : UIButton!
     @IBOutlet var btnFlip : UIButton!
 
@@ -43,13 +55,6 @@ class SampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        labelTime.text = ""
-        OVLFilter.setFrontCameraMode(true)
-        self.ovc.fHD = true
-        self.ovc.fps = 30
-        self.ovc.fFrontCamera = fFrontCamera
-        self.ovc.fPhotoRatio = false
-
         // Load the script after associated view controllers are fully initialized
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.ovc.loadScript(self.scripts[0])
@@ -72,11 +77,8 @@ class SampleViewController: UIViewController {
     }
     
     @IBAction func swiped(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == UISwipeGestureRecognizerDirection.Right) {
-            index = (index + 1) % scripts.count
-        } else {
-            index = (index + scripts.count - 1) % scripts.count
-        }
+        let delta = (sender.direction == UISwipeGestureRecognizerDirection.Right) ? 1 : -1
+        index = (index + delta + scripts.count) % scripts.count
     }
     
     @IBAction func record(sender:UIButton) {
@@ -88,7 +90,6 @@ class SampleViewController: UIViewController {
     }
     
     @IBAction func flip(sender:UIButton) {
-        NSLog("flipped")
         fFrontCamera = !fFrontCamera
         OVLFilter.setFrontCameraMode(fFrontCamera)
         self.ovc.updateCameraPosition(fFrontCamera)
