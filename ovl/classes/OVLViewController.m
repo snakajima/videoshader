@@ -378,25 +378,28 @@
         OVLTexture* nodeTexture = [scriptExtra.nodes objectAtIndex:0];
         if ([nodeTexture isKindOfClass:[OVLTexture class]]) {
             // taking the orientation out
-            nodeTexture.imageTexture = [UIImage imageWithCGImage:self.imageTexture.CGImage];
+            UIGraphicsBeginImageContextWithOptions(self.imageTexture.size, NO, self.imageTexture.scale);
+            [self.imageTexture drawInRect:(CGRect){0, 0, self.imageTexture.size}];
+            nodeTexture.imageTexture = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
         }
         OVLFilter* nodeRotation = [scriptExtra.nodes objectAtIndex:1];
         OVLFilter* nodeStretch = [scriptExtra.nodes objectAtIndex:2];
         float angle = 0.0;
         //CGImageRef imageRef = self.imageTexture.CGImage;
         //CGSize size = { CGImageGetWidth(imageRef), CGImageGetHeight(imageRef) };
-        CGSize size = self.imageTexture.size;
+        CGSize size = nodeTexture.imageTexture.size;
         CGSize sizeOut = { 9.0, 16.0 };
         float ratioX = size.width / sizeOut.width;
         float ratioY = size.height / sizeOut.height;
-        switch (self.imageTexture.imageOrientation) {
-        case UIImageOrientationUp:
+        switch ([UIDevice currentDevice].orientation) {
+        case UIDeviceOrientationPortrait:
             angle = M_PI_2;
             break;
-        case UIImageOrientationDown:
+        case UIDeviceOrientationPortraitUpsideDown:
             angle = -M_PI_2;
             break;
-        case UIImageOrientationLeft:
+        case UIDeviceOrientationLandscapeRight:
             angle = M_PI;
             // fall through
         default:
