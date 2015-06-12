@@ -365,6 +365,7 @@
         nodes = nodesNew;
     }
     if (self.imageTexture) {
+        NSLog(@"OVLVC imageOrientation %d", self.imageTexture.imageOrientation);
         NSDictionary* extra = @{
             @"pipeline":@[
                 @{ @"source":@"texture" },
@@ -376,7 +377,8 @@
         OVLScript* scriptExtra = [[OVLScript alloc] initWithDictionary:extra];
         OVLTexture* nodeTexture = [scriptExtra.nodes objectAtIndex:0];
         if ([nodeTexture isKindOfClass:[OVLTexture class]]) {
-            nodeTexture.imageTexture = self.imageTexture;
+            // taking the orientation out
+            nodeTexture.imageTexture = [UIImage imageWithCGImage:self.imageTexture.CGImage];
         }
         OVLFilter* nodeRotation = [scriptExtra.nodes objectAtIndex:1];
         OVLFilter* nodeStretch = [scriptExtra.nodes objectAtIndex:2];
@@ -387,14 +389,14 @@
         CGSize sizeOut = { 9.0, 16.0 };
         float ratioX = size.width / sizeOut.width;
         float ratioY = size.height / sizeOut.height;
-        switch ([UIDevice currentDevice].orientation) {
-        case UIDeviceOrientationPortrait:
+        switch (self.imageTexture.imageOrientation) {
+        case UIImageOrientationUp:
             angle = M_PI_2;
             break;
-        case UIDeviceOrientationPortraitUpsideDown:
+        case UIImageOrientationDown:
             angle = -M_PI_2;
             break;
-        case UIDeviceOrientationLandscapeRight:
+        case UIImageOrientationLeft:
             angle = M_PI;
             // fall through
         default:
