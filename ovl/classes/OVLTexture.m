@@ -29,7 +29,7 @@
     }
     glActiveTexture(GL_TEXTURE0 + TEXTURE_INDEX_TEXTURE);
     glBindTexture(GL_TEXTURE_2D, _texture.name);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glUniform1i(_uTexture2, TEXTURE_INDEX_TEXTURE);
     [delegate renderRect];
 }
