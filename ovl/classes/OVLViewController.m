@@ -365,7 +365,7 @@
         nodes = nodesNew;
     }
     if (self.imageTexture) {
-        NSLog(@"OVLVC imageOrientation %d", self.imageTexture.imageOrientation);
+        //NSLog(@"OVLVC imageOrientation %d", self.imageTexture.imageOrientation);
         NSDictionary* extra = @{
             @"pipeline":@[
                 @{ @"source":@"texture" },

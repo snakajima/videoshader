@@ -41,7 +41,7 @@
         NSError* err = nil;
         if (self.imageTexture) {
             _texture = [GLKTextureLoader textureWithCGImage:self.imageTexture.CGImage options:nil error:&err];
-            } else {
+        } else {
             NSString *path = [[NSBundle mainBundle] pathForResource:value ofType:@"png"];
             _texture = [GLKTextureLoader textureWithContentsOfFile:path options:nil error:&err];
         }
