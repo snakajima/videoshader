@@ -25,7 +25,7 @@
     CGFloat _clipRatio;
     
     AVCaptureSession* _captureSession;
-    CVOpenGLESTextureCacheRef _videoTextureCache;    
+    CVOpenGLESTextureCacheRef _textureCache;    
     AVCaptureVideoDataOutput* _videoOutput;
     AVCaptureAudioDataOutput* _audioOutput;
     AVCaptureStillImageOutput* _stillImageOutput;
@@ -220,7 +220,7 @@
     /*
     [_script compile];
     
-    CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, _glkView.context, NULL, &_videoTextureCache);
+    CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, _glkView.context, NULL, &_textureCache);
     */
 }
 
@@ -320,7 +320,7 @@
     //_glkView.drawableMultisample = GLKViewDrawableMultisample4X;
     _glkView.drawableColorFormat = GLKViewDrawableColorFormatRGB565;
 
-    CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, _glkView.context, NULL, &_videoTextureCache);
+    CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, _glkView.context, NULL, &_textureCache);
     if (self.assetSrc) {
         _assetReader = [AVAssetReader assetReaderWithAsset:self.assetSrc error:nil];
         NSArray *videoTracks = [self.assetSrc tracksWithMediaType:AVMediaTypeVideo];
@@ -472,7 +472,6 @@
         // We don't want to do anything if the shader is not initialized yet.
         return;
     }
-    //_shader.textureSrc = CVOpenGLESTextureGetName(_videoTexture);
     
     if (_assetReader) {
         if (_assetReader.status == AVAssetReaderStatusReading) {
@@ -571,7 +570,7 @@
         // Create a live binding between the captured pixelBuffer and an openGL texture
         CVReturn err = CVOpenGLESTextureCacheCreateTextureFromImage(
             kCFAllocatorDefault,    // allocator
-            _videoTextureCache,     // texture cache
+            _textureCache,     // texture cache
             pixelBuffer,            // source Image
             NULL,                   // texture attributes
             GL_TEXTURE_2D,          // target
@@ -680,7 +679,7 @@
     }
     
     // Periodic texture cache flush every frame
-    CVOpenGLESTextureCacheFlush(_videoTextureCache, 0);
+    CVOpenGLESTextureCacheFlush(_textureCache, 0);
 }
 
 -(void) _tearDownRenderTarget {
@@ -696,9 +695,9 @@
 
 - (void) _tearDownAVCapture {
     [self _cleanUpTextures];
-    if (_videoTextureCache) {
-        CFRelease(_videoTextureCache);
-        _videoTextureCache = nil;
+    if (_textureCache) {
+        CFRelease(_textureCache);
+        _textureCache = nil;
     }
 }
 
@@ -839,7 +838,7 @@ error:&error];
 
         // Create a live binding between _renderPixelBuffer and an openGL texture
         CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
-                                                    _videoTextureCache,
+                                                    _textureCache,
                                                     _renderPixelBuffer,
                                                     NULL, // texture attributes
                                                     GL_TEXTURE_2D,
