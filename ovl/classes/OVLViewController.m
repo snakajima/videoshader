@@ -56,6 +56,9 @@
     FFTSetup _fftSetup;
     DSPSplitComplex _fftA;
     CMItemCount _fftSize;
+    
+    // assetSrc
+    AVAssetReader *_assetReader;
 }
 @end
 
@@ -317,7 +320,15 @@
     _glkView.drawableColorFormat = GLKViewDrawableColorFormatRGB565;
 
     CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, _glkView.context, NULL, &_videoTextureCache);
-    [self _setupVideoCaptureSession];
+    if (self.assetSrc) {
+        _assetReader = [AVAssetReader assetReaderWithAsset:self.assetSrc error:nil];
+        NSArray *videoTracks = [self.assetSrc tracksWithMediaType:AVMediaTypeVideo];
+        NSDictionary* settings = @{ (id)kCVPixelBufferPixelFormatTypeKey:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]};
+        AVAssetReaderVideoCompositionOutput* output = [AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracks:videoTracks videoSettings:settings];
+        [_assetReader addOutput:output];
+    } else {
+        [self _setupVideoCaptureSession];
+    }
     
     // deferred
 #if TARGET_IPHONE_SIMULATOR
