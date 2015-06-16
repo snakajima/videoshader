@@ -59,6 +59,7 @@
     
     // assetSrc
     AVAssetReader *_assetReader;
+    AVAssetReaderOutput* _assetReaderOutput;
 }
 @end
 
@@ -324,8 +325,15 @@
         _assetReader = [AVAssetReader assetReaderWithAsset:self.assetSrc error:nil];
         NSArray *videoTracks = [self.assetSrc tracksWithMediaType:AVMediaTypeVideo];
         NSDictionary* settings = @{ (id)kCVPixelBufferPixelFormatTypeKey:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]};
-        AVAssetReaderVideoCompositionOutput* output = [AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracks:videoTracks videoSettings:settings];
-        [_assetReader addOutput:output];
+        _assetReaderOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTracks[0] outputSettings:settings];
+        //[AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracks:videoTracks videoSettings:settings];
+        [_assetReader addOutput:_assetReaderOutput];
+        [_assetReader startReading];
+        if (_assetReader.status == AVAssetReaderStatusReading) {
+            CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
+            [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
+            CFRelease(buffer);
+        }
     } else {
         [self _setupVideoCaptureSession];
     }
@@ -465,6 +473,23 @@
         return;
     }
     //_shader.textureSrc = CVOpenGLESTextureGetName(_videoTexture);
+    
+    if (_assetReader) {
+        if (_assetReader.status == AVAssetReaderStatusReading) {
+            CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
+            if (buffer) {
+                CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+                NSLog(@"OVLVC t=%.2f", (double)t.value / (double)t.timescale);
+                [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
+                CFRelease(buffer);
+            } else {
+                NSLog(@"OVLVC -- done");
+            }
+        } else {
+            NSLog(@"OVLVC -- stop");
+        }
+    }
+    
     [_shader process];
     
     [view bindDrawable];
@@ -511,7 +536,7 @@
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    if (captureOutput == _videoOutput) {
+    if (captureOutput == _videoOutput || _assetReader) {
         CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         _timeStamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);
         size_t width = CVPixelBufferGetWidth(pixelBuffer);
