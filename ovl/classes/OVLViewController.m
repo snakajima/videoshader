@@ -483,6 +483,12 @@
                 CFRelease(buffer);
             } else {
                 NSLog(@"OVLVC -- done");
+                _assetReaderOutput = nil;
+                _assetReader = nil;
+                [self resetShader];
+                if (_fRecording) {
+                    [self _stopRecording];
+                }
             }
         } else {
             NSLog(@"OVLVC -- stop");
