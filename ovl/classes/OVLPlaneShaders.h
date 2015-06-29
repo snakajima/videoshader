@@ -17,7 +17,6 @@
 @interface OVLPlaneShaders : OVLBaseShader <OVLNodeDelegate>
 //@property (nonatomic) GLuint textureSrc;
 -(UIImage*) snapshot:(BOOL)fAdjustSize;
--(CGImageRef) createSnapshotCGImage:(BOOL)fAdjustSize;
 -(void) setSourceTexture:(GLuint)texture;
 -(void) setRenderTexture:(CVOpenGLESTextureRef)renderTexture;
 -(id) initWithSize:(CGSize)size withNodeList:(NSArray*)nodeList viewSize:(CGSize)viewSize landscape:(BOOL)fLandscape;

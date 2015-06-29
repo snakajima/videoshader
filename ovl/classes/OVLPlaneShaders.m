@@ -339,7 +339,7 @@ static const MyVertex s_vertices[] = {
     glDrawElements(GL_TRIANGLE_STRIP, sizeof(s_indices)/sizeof(s_indices[0]), GL_UNSIGNED_SHORT, 0);
 }
 
--(CGImageRef) createSnapshotCGImage:(BOOL)fAdjustSize {
+-(UIImage*) snapshot:(BOOL)fAdjustSize {
     GLuint iLast = _stack[_sti-1];
     if (iLast == TEXTURE_INDEX_VIDEOIN) {
         NSLog(@"PS:snapshot #### Special case, empty pipeline");
@@ -374,12 +374,7 @@ static const MyVertex s_vertices[] = {
     //UIImage* image = [UIImage imageWithCGImage:cgImage];
     //CGImageRelease(cgImage);
     CGContextRelease(ctx);
-    return cgImage;
-}
-
--(UIImage*) snapshot:(BOOL)fAdjustSize {
-    CGImageRef cgImage = [self createSnapshotCGImage:fAdjustSize];
-    UIImage* image = [UIImage imageWithCGImage:cgImage];
+    UIImage* image= [UIImage imageWithCGImage:cgImage];
     CGImageRelease(cgImage);
     return image;
 }

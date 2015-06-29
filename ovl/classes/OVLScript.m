@@ -258,9 +258,8 @@
     [shader process];
     glFlush();
 
-    CGImageRef cgImage = [shader createSnapshotCGImage:NO];
-    UIImage* image = [UIImage imageWithCGImage:cgImage scale:imageSrc.scale orientation:imageSrc.imageOrientation];
-    CGImageRelease(cgImage);
+    UIImage* imageOrg = [shader snapshot:NO];
+    UIImage* image = [UIImage imageWithCGImage:imageOrg.CGImage scale:imageSrc.scale orientation:imageSrc.imageOrientation];
     return image;
 }
 
