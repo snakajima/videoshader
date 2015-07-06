@@ -484,40 +484,46 @@
 }
 
 -(BOOL) _readAssetBuffer {
+    BOOL fSkipShader = YES;
     if (_fFirstBufferIsAlreadyCaptured) {
         _fFirstBufferIsAlreadyCaptured = NO;
-        return NO;
-    }
-    
-    if (_fUpdated && self.fRecording) {
+        fSkipShader = NO;
+    } else if (_fUpdated && self.fRecording) {
         NSLog(@"OVL _readAssetBuffer, pending writing");
         [self _writeToBuffer];
-        return YES; // Skip Shader
-    }
-
-    if (_assetReader.status == AVAssetReaderStatusReading) {
+    } else if (_assetReader.status == AVAssetReaderStatusReading) {
+        BOOL fProcessing = NO;
         CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
         if (buffer) {
             CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
             NSLog(@"OVLVC video t=%.2f", (double)t.value / (double)t.timescale);
             [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
             CFRelease(buffer);
+            fSkipShader = NO;
+            fProcessing = YES;
         } else {
-            if (_audioMixOutput) {
-                while(1) {
-                    CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
-                    if (buffer) {
-                        CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
-                        NSLog(@"OVLVC audio t=%.2f", (double)t.value / (double)t.timescale);
-                        [_audioInput appendSampleBuffer:buffer];
-                        CFRelease(buffer);
-                    } else {
-                        break;
-                    }
+            NSLog(@"OVLVC -- video done");
+        }
+        
+        if (_audioMixOutput) {
+            if (_audioInput.readyForMoreMediaData) {
+                CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
+                if (buffer) {
+                    CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+                    NSLog(@"OVLVC audio t=%.2f", (double)t.value / (double)t.timescale);
+                    [_audioInput appendSampleBuffer:buffer];
+                    CFRelease(buffer);
+                    fProcessing = YES;
+                } else {
+                    NSLog(@"OVLVC -- audio done");
+                    _audioMixOutput = nil;
                 }
+            } else {
+                fProcessing = YES;
             }
-
-            NSLog(@"OVLVC -- done");
+        }
+        if (!fProcessing) {
+            NSLog(@"OVLVC -- all done");
             _assetReaderOutput = nil;
             _assetReader = nil;
             [self resetShader];
@@ -528,7 +534,7 @@
     } else {
         NSLog(@"OVLVC -- stop");
     }
-    return NO;
+    return fSkipShader;
 }
 
 
