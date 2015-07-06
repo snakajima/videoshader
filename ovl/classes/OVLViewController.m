@@ -59,7 +59,8 @@
     
     // assetSrc
     AVAssetReader *_assetReader;
-    AVAssetReaderOutput* _assetReaderOutput;
+    AVAssetReaderTrackOutput* _assetReaderOutput;
+    AVAssetReaderAudioMixOutput *_audioMixOutput;
 }
 @end
 
@@ -328,7 +329,18 @@
         _assetReaderOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTracks[0] outputSettings:settings];
         //[AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracks:videoTracks videoSettings:settings];
         [_assetReader addOutput:_assetReaderOutput];
+
+        NSArray *audioTracks = [self.assetSrc tracksWithMediaType:AVMediaTypeAudio];
+        if (audioTracks.count > 0) {
+            NSLog(@"OVLVC has audioTracks, %lu", (unsigned long)audioTracks.count);
+            NSDictionary *decompressionAudioSettings = @{ AVFormatIDKey : [NSNumber numberWithUnsignedInt:kAudioFormatLinearPCM] };
+            _audioMixOutput = [AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracks:audioTracks audioSettings:decompressionAudioSettings];
+            AVMutableAudioMix* mutableAudioMix = [AVMutableAudioMix audioMix];
+            _audioMixOutput.audioMix = mutableAudioMix;
+            [_assetReader addOutput:_audioMixOutput];
+        }
         [_assetReader startReading];
+
         if (_assetReader.status == AVAssetReaderStatusReading) {
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
             [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
@@ -478,10 +490,24 @@
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
             if (buffer) {
                 CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
-                NSLog(@"OVLVC t=%.2f", (double)t.value / (double)t.timescale);
+                NSLog(@"OVLVC video t=%.2f", (double)t.value / (double)t.timescale);
                 [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
                 CFRelease(buffer);
             } else {
+                if (_audioMixOutput) {
+                    while(1) {
+                        CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
+                        if (buffer) {
+                            CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+                            NSLog(@"OVLVC audio t=%.2f", (double)t.value / (double)t.timescale);
+                            [_audioInput appendSampleBuffer:buffer];
+                            CFRelease(buffer);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
                 NSLog(@"OVLVC -- done");
                 _assetReaderOutput = nil;
                 _assetReader = nil;
