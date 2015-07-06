@@ -62,6 +62,7 @@
     AVAssetReaderTrackOutput* _assetReaderOutput;
     AVAssetReaderAudioMixOutput *_audioMixOutput;
     BOOL _fFirstBufferIsAlreadyCaptured;
+    CGAffineTransform _assetTransform;
 }
 @end
 
@@ -327,7 +328,9 @@
         _assetReader = [AVAssetReader assetReaderWithAsset:self.assetSrc error:nil];
         NSArray *videoTracks = [self.assetSrc tracksWithMediaType:AVMediaTypeVideo];
         NSDictionary* settings = @{ (id)kCVPixelBufferPixelFormatTypeKey:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]};
-        _assetReaderOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTracks[0] outputSettings:settings];
+        AVAssetTrack* videoTrack = videoTracks[0];
+        _assetTransform = videoTrack.preferredTransform;
+        _assetReaderOutput = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:videoTrack outputSettings:settings];
         //[AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracks:videoTracks videoSettings:settings];
         [_assetReader addOutput:_assetReaderOutput];
 
@@ -851,8 +854,12 @@ error:&error];
           AVVideoWidthKey:[NSNumber numberWithInt:_size.width],
           AVVideoHeightKey:[NSNumber numberWithInt:_size.height]
         }];
-    AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationPortrait;
-    if (_assetReader == nil) {
+    
+    if (_assetReader) {
+        _videoInput.transform = _assetTransform;
+        _videoInput.expectsMediaDataInRealTime = YES;
+    } else {
+        AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationPortrait;
         switch([UIDevice currentDevice].orientation) {
         case UIDeviceOrientationLandscapeLeft:
             orientation = AVCaptureVideoOrientationLandscapeRight;
@@ -866,10 +873,10 @@ error:&error];
         default:
             break;
         }
+        _videoInput.transform = [self _transformFromCurrentVideoOrientation:AVCaptureVideoOrientationLandscapeRight
+                                    toOrientation:orientation];
+        _videoInput.expectsMediaDataInRealTime = YES;
     }
-    _videoInput.transform = [self _transformFromCurrentVideoOrientation:AVCaptureVideoOrientationLandscapeRight
-                                toOrientation:orientation];
-    _videoInput.expectsMediaDataInRealTime = YES;
     [_videoWriter addInput:_videoInput];
 
     NSDictionary* attr = @{
