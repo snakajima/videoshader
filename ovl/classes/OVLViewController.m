@@ -61,6 +61,7 @@
     AVAssetReader *_assetReader;
     AVAssetReaderTrackOutput* _assetReaderOutput;
     AVAssetReaderAudioMixOutput *_audioMixOutput;
+    BOOL _fFirstBufferIsAlreadyCaptured;
 }
 @end
 
@@ -345,6 +346,7 @@
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
             [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
             CFRelease(buffer);
+            _fFirstBufferIsAlreadyCaptured = YES;
         }
     } else {
         [self _setupVideoCaptureSession];
@@ -478,6 +480,55 @@
     }
 }
 
+-(BOOL) _readAssetBuffer {
+    if (_fFirstBufferIsAlreadyCaptured) {
+        _fFirstBufferIsAlreadyCaptured = NO;
+        return NO;
+    }
+    
+    if (_fUpdated && self.fRecording) {
+        NSLog(@"OVL _readAssetBuffer, pending writing");
+        [self _writeToBuffer];
+        return YES; // Skip Shader
+    }
+
+    if (_assetReader.status == AVAssetReaderStatusReading) {
+        CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
+        if (buffer) {
+            CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+            NSLog(@"OVLVC video t=%.2f", (double)t.value / (double)t.timescale);
+            [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
+            CFRelease(buffer);
+        } else {
+            if (_audioMixOutput) {
+                while(1) {
+                    CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
+                    if (buffer) {
+                        CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+                        NSLog(@"OVLVC audio t=%.2f", (double)t.value / (double)t.timescale);
+                        [_audioInput appendSampleBuffer:buffer];
+                        CFRelease(buffer);
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            NSLog(@"OVLVC -- done");
+            _assetReaderOutput = nil;
+            _assetReader = nil;
+            [self resetShader];
+            if (_fRecording) {
+                [self _stopRecording];
+            }
+        }
+    } else {
+        NSLog(@"OVLVC -- stop");
+    }
+    return NO;
+}
+
+
 // <GLKViewDelegate> method
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     if (!_shader) {
@@ -486,38 +537,9 @@
     }
     
     if (_assetReader) {
-        if (_assetReader.status == AVAssetReaderStatusReading) {
-            CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
-            if (buffer) {
-                CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
-                NSLog(@"OVLVC video t=%.2f", (double)t.value / (double)t.timescale);
-                [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
-                CFRelease(buffer);
-            } else {
-                if (_audioMixOutput) {
-                    while(1) {
-                        CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
-                        if (buffer) {
-                            CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
-                            NSLog(@"OVLVC audio t=%.2f", (double)t.value / (double)t.timescale);
-                            [_audioInput appendSampleBuffer:buffer];
-                            CFRelease(buffer);
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
-                NSLog(@"OVLVC -- done");
-                _assetReaderOutput = nil;
-                _assetReader = nil;
-                [self resetShader];
-                if (_fRecording) {
-                    [self _stopRecording];
-                }
-            }
-        } else {
-            NSLog(@"OVLVC -- stop");
+        BOOL fSkipShader = [self _readAssetBuffer];
+        if (fSkipShader) {
+            return;
         }
     }
     
