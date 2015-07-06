@@ -543,6 +543,7 @@
         }
     }
     
+    //NSLog(@"OVLVL drawInRect shading");
     [_shader process];
     
     [view bindDrawable];
@@ -613,10 +614,15 @@
                 }
             }
             
-            dispatch_async(dispatch_get_main_queue(), ^{
+            if (_assetReader) {
                 _fInitializingShader = NO;
                 [self _initShader:_size];
-            });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    _fInitializingShader = NO;
+                    [self _initShader:_size];
+                });
+            }
         }
         
         [self _cleanUpTextures];
@@ -845,8 +851,24 @@ error:&error];
           AVVideoWidthKey:[NSNumber numberWithInt:_size.width],
           AVVideoHeightKey:[NSNumber numberWithInt:_size.height]
         }];
+    AVCaptureVideoOrientation orientation = AVCaptureVideoOrientationPortrait;
+    if (_assetReader == nil) {
+        switch([UIDevice currentDevice].orientation) {
+        case UIDeviceOrientationLandscapeLeft:
+            orientation = AVCaptureVideoOrientationLandscapeRight;
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            orientation = AVCaptureVideoOrientationLandscapeLeft;
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            orientation = AVCaptureVideoOrientationPortraitUpsideDown;
+            break;
+        default:
+            break;
+        }
+    }
     _videoInput.transform = [self _transformFromCurrentVideoOrientation:AVCaptureVideoOrientationLandscapeRight
-                                toOrientation:[[UIDevice currentDevice] orientation]];
+                                toOrientation:orientation];
     _videoInput.expectsMediaDataInRealTime = YES;
     [_videoWriter addInput:_videoInput];
 
@@ -958,6 +980,7 @@ error:&error];
             timeStamp = CMTimeAdd(_startTime, delta);
         }
 #if 1
+        NSLog(@"OVLVC _write t=%.2f", (double)timeStamp.value / (double)timeStamp.timescale);
         [_adaptor appendPixelBuffer:_renderPixelBuffer withPresentationTime:timeStamp];
 #else
         CVPixelBufferRef pixel_buffer = NULL;
