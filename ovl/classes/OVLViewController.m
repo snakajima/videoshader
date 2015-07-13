@@ -993,7 +993,7 @@ error:&error];
             timeStamp = CMTimeAdd(_startTime, delta);
         }
 #if 1
-        NSLog(@"OVLVC _write t=%.2f", (double)timeStamp.value / (double)timeStamp.timescale);
+        //NSLog(@"OVLVC _write t=%.2f", (double)timeStamp.value / (double)timeStamp.timescale);
         [_adaptor appendPixelBuffer:_renderPixelBuffer withPresentationTime:timeStamp];
 #else
         CVPixelBufferRef pixel_buffer = NULL;
