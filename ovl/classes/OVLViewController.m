@@ -72,6 +72,10 @@
 @dynamic context;
 @dynamic glkView;
 
+-(AVCaptureSession*) session {
+    return _captureSession;
+}
+
 -(GLKView*) glkView {
     return _glkView;
 }

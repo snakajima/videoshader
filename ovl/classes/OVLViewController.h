@@ -45,4 +45,5 @@
 @property (nonatomic) CMTime timeRecorded;
 @property (nonatomic) BOOL fNoAudio;
 @property (nonatomic, retain) AVAsset* assetSrc;
+@property (nonatomic, readonly) AVCaptureSession* session;
 @end
