@@ -351,6 +351,8 @@
 
         if (_assetReader.status == AVAssetReaderStatusReading) {
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
+            CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
+            NSLog(@"OVLVC processing the very first frame t=%.2f", (double)t.value / (double)t.timescale);
             [self captureOutput:nil didOutputSampleBuffer:buffer fromConnection:nil];
             CFRelease(buffer);
             _fFirstBufferIsAlreadyCaptured = YES;
