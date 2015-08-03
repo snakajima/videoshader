@@ -349,6 +349,8 @@
         }
         [_assetReader startReading];
 
+        //[self _setInitialSize:videoTrack.naturalSize];
+        // We need to read at least one frame to initilize the shader
         if (_assetReader.status == AVAssetReaderStatusReading) {
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
             CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
@@ -604,6 +606,34 @@
     }
 }
 
+-(void) _setInitialSize:(CGSize)size {
+    _size = size;
+    if (!self.fHD) {
+        // NOTE: Using floor add a green line at the bottom
+        _size.width = ceil(480.0 * _size.width / _size.height);
+        _size.height = 480.0;
+    }
+    _clipRatio = 1.0;
+    if (self.fPhotoRatio) {
+        CGFloat width = _size.height / 3.0 * 4.0;
+        if (_size.width > width + 1.0) {
+            _clipRatio = _size.width / width;
+            _size.width = width;
+            //NSLog(@"OVL capture size adjusted to %f,%f", _size.width, _size.height);
+        }
+    }
+    
+    if (_assetReader) {
+        _fInitializingShader = NO;
+        [self _initShader:_size];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _fInitializingShader = NO;
+            [self _initShader:_size];
+        });
+    }
+}
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     if (captureOutput == _videoOutput || _assetReader) {
         CVImageBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
@@ -612,32 +642,8 @@
         size_t height = CVPixelBufferGetHeight(pixelBuffer);
         if (!_shader && _script && !_fInitializingShader) {
             _fInitializingShader = YES;
-            // NOTE: We assumes that the camera is always in the landscape mode. 
-            _size = CGSizeMake(width, height);
-            if (!self.fHD) {
-                // NOTE: Using floor add a green line at the bottom
-                _size.width = ceil(480.0 * _size.width / _size.height);
-                _size.height = 480.0;
-            }
-            _clipRatio = 1.0;
-            if (self.fPhotoRatio) {
-                CGFloat width = _size.height / 3.0 * 4.0;
-                if (_size.width > width + 1.0) {
-                    _clipRatio = _size.width / width;
-                    _size.width = width;
-                    //NSLog(@"OVL capture size adjusted to %f,%f", _size.width, _size.height);
-                }
-            }
-            
-            if (_assetReader) {
-                _fInitializingShader = NO;
-                [self _initShader:_size];
-            } else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    _fInitializingShader = NO;
-                    [self _initShader:_size];
-                });
-            }
+            // NOTE: We assumes that the camera is always in the landscape mode.
+            [self _setInitialSize:CGSizeMake(width, height)];
         }
         
         [self _cleanUpTextures];
