@@ -349,7 +349,8 @@
         }
         [_assetReader startReading];
 
-        //[self _setInitialSize:videoTrack.naturalSize];
+        [self _setInitialSize:videoTrack.naturalSize];
+        /*
         // We need to read at least one frame to initilize the shader
         if (_assetReader.status == AVAssetReaderStatusReading) {
             CMSampleBufferRef buffer = [_assetReaderOutput copyNextSampleBuffer];
@@ -359,6 +360,7 @@
             CFRelease(buffer);
             _fFirstBufferIsAlreadyCaptured = YES;
         }
+        */
     } else {
         [self _setupVideoCaptureSession];
     }
@@ -514,7 +516,8 @@
         }
         
         if (_audioMixOutput) {
-            if (_audioInput.readyForMoreMediaData) {
+            // We can't process audio until we call _writeToBuffer at least once
+            if (!_fFirstFrame && _audioInput.readyForMoreMediaData) {
                 CMSampleBufferRef buffer = [_audioMixOutput copyNextSampleBuffer];
                 if (buffer) {
                     CMTime t = CMSampleBufferGetPresentationTimeStamp(buffer);
