@@ -61,7 +61,7 @@
     AVAssetReader *_assetReader;
     AVAssetReaderTrackOutput* _assetReaderOutput;
     AVAssetReaderAudioMixOutput *_audioMixOutput;
-    BOOL _fFirstBufferIsAlreadyCaptured;
+    //BOOL _fFirstBufferIsAlreadyCaptured;
     CGAffineTransform _assetTransform;
 }
 @end
@@ -495,10 +495,11 @@
 
 -(BOOL) _readAssetBuffer {
     BOOL fSkipShader = YES;
-    if (_fFirstBufferIsAlreadyCaptured) {
+    /*if (_fFirstBufferIsAlreadyCaptured) {
         _fFirstBufferIsAlreadyCaptured = NO;
         fSkipShader = NO;
-    } else if (_fUpdated && self.fRecording) {
+    } else */
+    if (_fUpdated && self.fRecording) {
         NSLog(@"OVL _readAssetBuffer, pending writing");
         [self _writeToBuffer];
     } else if (_assetReader.status == AVAssetReaderStatusReading) {
