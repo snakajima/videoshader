@@ -535,7 +535,7 @@
             _assetReaderOutput = nil;
             _assetReader = nil;
             [self resetShader];
-            if (_fRecording) {
+            if (self.fRecording) {
                 [self _stopRecording];
             }
         }
