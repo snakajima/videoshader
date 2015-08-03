@@ -553,7 +553,7 @@
         return;
     }
     
-    if (_assetReader) {
+    if (_assetReader && self.fRecording) {
         BOOL fSkipShader = [self _readAssetBuffer];
         if (fSkipShader) {
             return;
