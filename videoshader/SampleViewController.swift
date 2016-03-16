@@ -37,7 +37,7 @@ class SampleViewController: UIViewController {
         for name in self.scriptNames {
             if let path = NSBundle.mainBundle().pathForResource(name, ofType: "vsscript"),
                let data = NSData(contentsOfFile:path),
-               let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? [NSObject : AnyObject] {
+               let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)) as? [NSObject : AnyObject] {
                         scripts.append(OVLScript(dictionary: json))
             }
         }
