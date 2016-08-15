@@ -14,14 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     lazy var audioSession:AVAudioSession = {
         let session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        session.setMode(AVAudioSessionModeVideoRecording, error: nil)
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        } catch _ {
+        }
+        do {
+            try session.setMode(AVAudioSessionModeVideoRecording)
+        } catch _ {
+        }
         return session
     }()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        audioSession.setActive(true, error: nil)
+        do {
+            // Override point for customization after application launch.
+            try audioSession.setActive(true)
+        } catch _ {
+        }
         
         return true
     }

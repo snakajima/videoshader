@@ -725,6 +725,8 @@
 		74046BD41AD4AA6F00A2017A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = satoshi;
 				TargetAttributes = {
